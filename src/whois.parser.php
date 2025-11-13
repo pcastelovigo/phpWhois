@@ -48,6 +48,7 @@ function generic_parser_b($rawdata, $items = array(), $dateformat = 'mdy', $hasr
  *
  * @return array The updated array
  * @see https://github.com/sparc/phpWhois.org/compare/18849d1a98b992190612cdb2561e7b4492c505f5...8c6a18686775b25f05592dd67d7706e47167a498#diff-b8adbe1292f8abca1f943aa844db52aa Original fix by David Saez PAdros sparc
+ * @see https://github.com/kevinoo/phpWhois/commit/42b278d47858a06a0c074c24cf2bf5b0fb5742d7
  */
 function assign_recursive(array $array, array $parts, $value)
 {
@@ -63,7 +64,12 @@ function assign_recursive(array $array, array $parts, $value)
         if (!isset($array[$key])) {
             $array[$key] = [];
         }
-        $array[$key] = assign_recursive($array[$key], $parts, $value);
+
+        if (is_array($array[$key])) {
+            $array[$key] = assign_recursive($array[$key], $parts, $value);
+        } else {
+            // maybe non-array
+        }
     }
 
     return $array;
