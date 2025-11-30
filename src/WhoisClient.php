@@ -344,7 +344,7 @@ class WhoisClient
     /**
      * Convert html output to plain text
      *
-     * @return array Rawdata
+     * @return array|false Rawdata
      */
     public function httpQuery()
     {
