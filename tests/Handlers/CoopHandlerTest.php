@@ -66,9 +66,9 @@ class CoopHandlerTest extends AbstractHandler
             'domain'     => [
                 'name' => 'smile.coop',
                 'handle' => 'D7878757-CNIC',
-                'changed' => '2022-12-24',
+                'changed' => '2024-12-28',
                 'created' => '2001-07-10',
-                'expires' => '2024-01-30',
+                'expires' => '2026-01-30',
             ],
             'registered' => 'yes',
         ];
@@ -98,7 +98,7 @@ class CoopHandlerTest extends AbstractHandler
             'domain'     => [
                 'name' => 'nic.coop',
                 'handle' => 'DO_59f76c35d72c849fba8b632e12102b0d-COOP',
-                'changed' => '2022-12-13',
+                'changed' => '2024-02-26',
                 'created' => '2022-11-07',
                 'expires' => '2032-11-07',
             ],
@@ -130,9 +130,9 @@ class CoopHandlerTest extends AbstractHandler
             'domain'     => [
                 'name' => 'domains.coop',
                 'handle' => 'D7881481-CNIC',
-                'changed' => '2022-12-07',
+                'changed' => '2024-06-02',
                 'created' => '2002-07-09',
-                'expires' => '2024-07-09',
+                'expires' => '2029-07-09',
             ],
             'registered' => 'yes',
         ];

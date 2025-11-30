@@ -66,7 +66,7 @@ class UkHandlerTest extends AbstractHandler
             'domain'     => [
 				'created' => '2024-10-24',
 				'expires' => '2025-10-24',
-				'changed' => '2024-11-05',
+                'changed' => '2025-10-31',
             ],
             'registered' => 'no',
         ];
@@ -96,8 +96,8 @@ class UkHandlerTest extends AbstractHandler
             'domain'     => [
                 // 'name'    => 'google.co.uk',
                 'created' => '1999-02-14',
-				'changed' => '2024-01-13',
-				'expires' => '2025-02-14',
+                'expires' => '2026-02-14',
+                'changed' => '2025-01-13',
             ],
             'registered' => 'yes',
         ];
@@ -127,8 +127,8 @@ class UkHandlerTest extends AbstractHandler
             'domain'     => [
                 // 'name'    => 'olsns.co.uk',
                 'created' => '2001-02-21',
-				'changed' => '2024-02-18',
-				'expires' => '2025-02-21',
+                'expires' => '2026-02-21',
+                'changed' => '2025-02-19',
             ],
             'registered' => 'yes',
         ];

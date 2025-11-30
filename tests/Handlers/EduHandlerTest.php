@@ -65,7 +65,7 @@ class EduHandlerTest extends AbstractHandler
         $expected = [
             'domain'     => [
                 'name'    => 'berkeley.edu',
-                'changed' => '2023-01-31',
+                'changed' => '2025-09-11',
                 'created' => '1985-04-24',
             ],
             // 'registered' => 'yes', // Currently broken

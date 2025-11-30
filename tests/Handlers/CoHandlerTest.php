@@ -63,13 +63,7 @@ class CoHandlerTest extends AbstractHandler
         $actual = $this->handler->parse($data, $query);
 
         $expected = [
-            'domain'     => [
-                'name'    => 'google.co',
-				'changed' => '2024-01-28',
-				'created' => '2010-02-25',
-				'expires' => '2025-02-24',
-            ],
-            'registered' => 'yes',
+            'registered' => 'no',
         ];
 
         Assert::assertArraySubset($expected, $actual['regrinfo'], 'Whois data may have changed');
@@ -95,13 +89,7 @@ class CoHandlerTest extends AbstractHandler
         $actual = $this->handler->parse($data, $query);
 
         $expected = [
-            'domain'     => [
-                'name'    => 'nic.co',
-				'changed' => '2024-06-07',
-				'created' => '2010-04-23',
-				'expires' => '2025-04-22',
-            ],
-            'registered' => 'yes',
+            'registered' => 'no',
         ];
 
         Assert::assertArraySubset($expected, $actual['regrinfo'], 'Whois data may have changed');

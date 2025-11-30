@@ -50,9 +50,9 @@ class BizHandlerTest extends AbstractHandler
         $expected = [
             'domain'     => [
                 'name'    => 'neulevel.biz',
-                'changed' => '2022-12-21',
+                'changed' => '2025-10-24',
                 'created' => '2001-09-30',
-                'expires' => '2023-11-06',
+                'expires' => '2025-11-06',
             ],
             'registered' => 'yes',
         ];

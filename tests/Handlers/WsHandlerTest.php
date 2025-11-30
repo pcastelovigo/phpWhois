@@ -97,9 +97,9 @@ class WsHandlerTest extends AbstractHandler
         $expected = [
             'domain'     => [
                 'name'    => 'SAMOANIC.WS',
-				'changed' => '2024-03-09',
-				'created' => '2000-03-09',
-				'expires' => '2025-03-09',
+                'changed' => '2025-03-09',
+                'created' => '2000-03-09',
+                'expires' => '2026-03-09',
             ],
             'registered' => 'yes',
         ];

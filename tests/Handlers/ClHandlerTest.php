@@ -67,7 +67,7 @@ class ClHandlerTest extends AbstractHandler
                 'name'    => 'google.cl',
                 // 'changed' => '2020-01-13',
 				'created' => '2002-10-22',
-				'expires' => '2025-11-20',
+				'expires' => '2026-11-20',
             ],
             // 'registered' => 'yes', // Currently broken
         ];

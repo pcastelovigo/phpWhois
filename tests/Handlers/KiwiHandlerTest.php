@@ -52,7 +52,7 @@ class KiwiHandlerTest extends AbstractHandler
             'domain'     => [
                 'name'    => 'hello.kiwi',
                 'created' => '2014-02-06',
-                'changed' => '2022-04-14',
+                'changed' => '2023-09-11',
                 'expires' => '2026-10-31',
             ],
             'registered' => 'yes',
@@ -84,9 +84,9 @@ class KiwiHandlerTest extends AbstractHandler
         $expected = [
             'domain'     => [
                 'name'    => 'google.kiwi',
+                'changed' => '2025-02-26',
                 'created' => '2014-03-25',
-                'changed' => '2023-02-26',
-                'expires' => '2024-03-25',
+                'expires' => '2026-03-25',
             ],
             'registered' => 'yes',
         ];

@@ -66,8 +66,8 @@ class FiHandlerTest extends AbstractHandler
             'domain'     => [
                 'name'    => 'google.fi',
                 'created' => '2006-06-30',
-				'expires' => '2025-07-04',
-				'changed' => '2024-06-02',
+                'expires' => '2026-07-04',
+                'changed' => '2025-06-02',
             ],
             'registered' => 'yes',
         ];

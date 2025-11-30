@@ -50,9 +50,9 @@ class AgHandlerTest extends AbstractHandler
         $expected = [
             'domain'     => [
                 'name'    => 'nic.ag',
-                'changed' => '2024-09-23',
+                'changed' => '2025-06-16',
                 'created' => '1998-05-02',
-                'expires' => '2025-05-02',
+                'expires' => '2026-05-02',
             ],
             'registered' => 'yes',
         ];
