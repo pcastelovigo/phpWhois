@@ -2,13 +2,14 @@ Domain Name: hello.kiwi
 Registry Domain ID: 38699-KIWI
 Registrar WHOIS Server: whois.1api.net
 Registrar URL: www.1api.net
-Updated Date: 2022-04-14T03:36:53Z
+Updated Date: 2023-09-11T17:27:06Z
 Creation Date: 2014-02-06T11:28:52Z
 Registry Expiry Date: 2026-10-31T11:00:00Z
 Registrar: 1API
 Registrar IANA ID: 1387
 Registrar Abuse Contact Email:
 Registrar Abuse Contact Phone:
+Registrar Abuse Contact Phone Ext:
 Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
 Registry Registrant ID: REDACTED FOR PRIVACY
 Registrant Name: REDACTED FOR PRIVACY
@@ -67,12 +68,12 @@ Name Server: ns2142.dns.dyn.com
 Name Server: ns3198.dns.dyn.com
 DNSSEC: unsigned
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of WHOIS database: 2023-08-11T14:46:44Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:10:07Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 
 %
 % Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal
-% Notice, available at http://www.cira.ca/legal-notice/?lang=en
+% Notice, available at https://www.cira.ca/en/resources/documents/about/website-terms-use
 %
-% (c) 2023 Canadian Internet Registration Authority, (http://www.cira.ca/)
+% (c) 2025 Canadian Internet Registration Authority, (http://www.cira.ca/)

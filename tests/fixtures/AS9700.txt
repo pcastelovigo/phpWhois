@@ -89,7 +89,7 @@ last-modified:  2018-07-17T02:14:01Z
 source:         APNIC
 
 irt:            IRT-KRNIC-KR
-address:        Jeollanam-do Naju-si Jinheung-gil
+address:        9, Jinheung-gil, Naju-si, Jeollanam-do
 e-mail:         irt@nic.or.kr
 abuse-mailbox:  irt@nic.or.kr
 admin-c:        IM574-AP
@@ -97,7 +97,7 @@ tech-c:         IM574-AP
 auth:           # Filtered
 remarks:        irt@nic.or.kr was validated on 2020-04-09
 mnt-by:         MNT-KRNIC-AP
-last-modified:  2021-06-15T06:21:49Z
+last-modified:  2025-09-04T01:00:01Z
 source:         APNIC
 
 person:         AS Manager
@@ -116,18 +116,34 @@ aut-num:        AS9700
 as-name:        KRNIC-AS-KR-KR
 descr:          Korea Internet Security Agency
 country:        KR
-import:         from AS3786 action pref=10 accept ANY
 import:         from AS9318 action pref=20 accept ANY
 import:         from AS9286 action pref=30 accept ANY
-export:         to AS3786 announce AS9700
+import:         from AS3786 action pref=10 accept ANY
 export:         to AS9318 announce AS9700
 export:         to AS9286 announce AS9700
+export:         to AS3786 announce AS9700
 admin-c:        NA145-KR
 tech-c:         NA145-KR
 mnt-by:         MNT-KRNIC-AP
 mnt-irt:        IRT-KRNIC-KR
-changed:        hostmaster@nic.or.kr
+remarks:        This information has been partially mirrored by APNIC from
+remarks:        KRNIC. To obtain more specific information, please use the
+remarks:        KRNIC whois server at whois.kisa.or.kr.
 source:         KRNIC
 
-% This query was served by the APNIC Whois Service version 1.88.16 (WHOIS-UK4)
+person:         AS Manager
+address:        Jeollanam-do Naju-si Jinheung-gil
+address:        9
+country:        KR
+phone:          +82-2-405-5118
+e-mail:         hostmaster@nic.or.kr
+nic-hdl:        NA145-KR
+mnt-by:         MNT-KRNIC-AP
+changed:        hostmaster@nic.or.kr 20240912
+remarks:        This information has been partially mirrored by APNIC from
+remarks:        KRNIC. To obtain more specific information, please use the
+remarks:        KRNIC whois server at whois.kisa.or.kr.
+source:         KRNIC
+
+% This query was served by the APNIC Whois Service version 1.88.34 (WHOIS-UK2)
 

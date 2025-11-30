@@ -2,19 +2,19 @@
    Registry Domain ID: 13313640_DOMAIN_COM-VRSN
    Registrar WHOIS Server: whois.domainpeople.com
    Registrar URL: http://www.domainpeople.com
-   Updated Date: 2024-11-07T12:05:24Z
+   Updated Date: 2025-06-09T17:15:02Z
    Creation Date: 1999-11-16T14:09:52Z
    Registry Expiry Date: 2027-11-16T14:09:52Z
    Registrar: DomainPeople, Inc.
    Registrar IANA ID: 65
-   Registrar Abuse Contact Email:
-   Registrar Abuse Contact Phone:
+   Registrar Abuse Contact Email: abuse@domainpeople.com
+   Registrar Abuse Contact Phone: +1.8664678929
    Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
    Name Server: NS1.SOLVPS.COM
    Name Server: NS2.SOLVPS.COM
    DNSSEC: unsigned
    URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of whois database: 2024-11-29T09:43:02Z <<<
+>>> Last update of whois database: 2025-11-30T17:09:31Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

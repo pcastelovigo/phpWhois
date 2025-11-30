@@ -16,9 +16,9 @@ holder-c:                      ANO00-FRNIC
 admin-c:                       ANO00-FRNIC
 tech-c:                        K6635-FRNIC
 registrar:                     RANXPLORER
-Expiry Date:                   2025-07-30T22:32:03.626236Z
+Expiry Date:                   2026-07-30T22:32:03.626236Z
 created:                       2023-07-30T22:32:03.643209Z
-last-update:                   2023-08-10T07:31:29.181136Z
+last-update:                   2025-08-31T22:14:16.657453Z
 source:                        FRNIC
 
 nserver:                       ns1.bodis.com
@@ -30,41 +30,17 @@ address:                       78 RUE D ALEMBERT
 address:                       38000 GRENOBLE
 country:                       FR
 phone:                         +33.458000007
-e-mail:                        contact@kifcorp.fr
+e-mail:                        contact@kifdom.com
 website:                       https://www.kifdom.com/faq.php
 anonymous:                     No
 registered:                    2014-12-22T00:00:00Z
-source:                        FRNIC
-
-nic-hdl:                       K6635-FRNIC
-type:                          ORGANIZATION
-contact:                       RANXPLORER
-address:                       RANXPLORER
-address:                       78 rue d'alembert
-address:                       38000 Grenoble
-country:                       FR
-phone:                         +33.458000007
-e-mail:                        contact@kifcorp.fr
-registrar:                     RANXPLORER
-changed:                       2024-11-28T10:10:15.983505Z
-anonymous:                     NO
-obsoleted:                     NO
-eppstatus:                     associated
-eppstatus:                     active
-eligstatus:                    ok
-eligsource:                    REGISTRY
-eligdate:                      2021-08-10T00:00:00Z
-reachstatus:                   ok
-reachmedia:                    phone
-reachsource:                   REGISTRY
-reachdate:                     2021-08-10T00:00:00Z
 source:                        FRNIC
 
 nic-hdl:                       ANO00-FRNIC
 type:                          PERSON
 contact:                       Ano Nymous
 registrar:                     RANXPLORER
-changed:                       2024-11-11T10:28:43.114928Z
+changed:                       2025-11-12T14:08:19.136387Z
 anonymous:                     YES
 remarks:                       -------------- WARNING --------------
 remarks:                       While the registrar knows him/her,
@@ -77,9 +53,38 @@ remarks:                       -------------- WARNING --------------
 obsoleted:                     NO
 eppstatus:                     associated
 eppstatus:                     active
-eligstatus:                    not identified
-reachstatus:                   not identified
+eligstatus:                    ok
+eligsource:                    REGISTRAR
+eligdate:                      2025-04-16T07:16:51.183746Z
+reachstatus:                   ok
+reachmedia:                    email
+reachsource:                   REGISTRAR
+reachdate:                     2025-04-16T07:16:51.183755Z
 source:                        FRNIC
 
->>> Last update of WHOIS database: 2024-11-29T09:41:49.714762Z <<<
+nic-hdl:                       K6635-FRNIC
+type:                          ORGANIZATION
+contact:                       RANXPLORER
+address:                       RANXPLORER
+address:                       78 rue d'Alembert
+address:                       38000 Grenoble
+country:                       FR
+phone:                         +33.458000007
+e-mail:                        contact@kifcorp.fr
+registrar:                     RANXPLORER
+changed:                       2025-11-30T06:15:02.715838Z
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     associated
+eppstatus:                     active
+eligstatus:                    ok
+eligsource:                    REGISTRAR
+eligdate:                      2025-04-16T06:15:29.779373Z
+reachstatus:                   ok
+reachmedia:                    email
+reachsource:                   REGISTRAR
+reachdate:                     2025-04-16T06:15:29.779384Z
+source:                        FRNIC
+
+>>> Last update of WHOIS database: 2025-11-30T17:08:22.337227Z <<<
 

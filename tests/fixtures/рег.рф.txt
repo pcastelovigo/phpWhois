@@ -11,8 +11,8 @@ taxpayer-id:   7733568767
 registrar:     REGRU-RF
 admin-contact: http://www.reg.ru/whois/admin_contact
 created:       2009-12-11T11:53:43Z
-paid-till:     2025-12-11T11:53:43Z
-free-date:     2026-01-11
+paid-till:     2026-12-11T11:53:43Z
+free-date:     2027-01-11
 source:        TCI
 
-Last updated on 2024-11-29T09:48:01Z
+Last updated on 2025-11-30T17:08:01Z

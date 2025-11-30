@@ -1,6 +1,6 @@
 Domain Name: dnc.org.nz
 Registrar URL: https://dnc.org.nz
-Updated Date: 2024-11-22T11:01:44Z
+Updated Date: 2025-11-22T11:02:44Z
 Creation Date: 2002-04-22T12:00:00Z
 Original Created: 2002-04-22T12:00:00Z
 Registrar: Domain Name Commission Limited
@@ -10,7 +10,7 @@ Name Server: amy.ns.cloudflare.com
 Name Server: dom.ns.cloudflare.com
 DNSSEC: signedDelegation
 URL of the Domain Name Commission Limited Inaccuracy Complaint Form: https://dnc.org.nz/enquiry-form/
->>> Last update of WHOIS database: 2024-11-29T09:42:33Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:08:52Z <<<
 
 % Terms of Use
 %

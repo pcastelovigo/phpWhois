@@ -9,22 +9,23 @@ Registrar: BRS Media Inc.
 Registrar IANA ID: 9999
 Domain Status: ok https://icann.org/epp#ok
 Registrant Email: https://whois.nic.fm/contact/dot.fm/registrant
-Admin Email: https://whois.nic.fm/contact/dot.fm/admin
 Tech Email: https://whois.nic.fm/contact/dot.fm/tech
 Name Server: NS3.IDNZ.NET
 Name Server: NS1.IDNZ.NET
 Name Server: NS2.IDNZ.NET
 DNSSEC: unsigned
-Billing Email: https://whois.nic.fm/contact/dot.fm/billing
 Registrar Abuse Contact Email: registry@brsmedia.com
 Registrar Abuse Contact Phone: +1.4156774027
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of WHOIS database: 2024-11-29T09:41:48.0Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:08:21.0Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 
 >>> IMPORTANT INFORMATION ABOUT THE DEPLOYMENT OF RDAP: please visit
-https://www.centralnicregistry.com/support/rdap <<<
+https://www.centralnicregistry.com/support/information/rdap <<<
+
+The registration data available in this service is limited. Additional
+data may be available at https://lookup.icann.org
 
 The Whois and RDAP services are provided by CentralNic, and contain
 information pertaining to Internet domain names registered by our
@@ -37,4 +38,4 @@ actions in contravention of these terms will result in being permanently
 blacklisted. All data is (c) CentralNic Ltd (https://www.centralnicregistry.com)
 
 Access to the Whois and RDAP services is rate limited. For more
-information, visit https://registrar-console.centralnicregistry.com/pub/whois_guidance.
+information, visit https://centralnicregistry.com/policies/whois-guidance.

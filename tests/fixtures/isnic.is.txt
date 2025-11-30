@@ -5,7 +5,7 @@
 
 domain:       isnic.is
 registrant:   IIH33-IS
-admin-c:      JENS-IS
+admin-c:      ISHM-IS
 tech-c:       ISHM-IS
 zone-c:       ISHM-IS
 billing-c:    ISBC-IS
@@ -15,7 +15,7 @@ nserver:      nsp.dnsnode.net
 nserver:      sec1.rcode0.net
 dnssec:       signed delegation
 created:      September  5 2000
-expires:      September  5 2025
+expires:      September  5 2026
 source:       ISNIC 
 
 role:         Internet a Islandi hf.
@@ -25,11 +25,6 @@ address:      IS-105 Reykjavik
 phone:        +354 5782030
 e-mail:       isnic@isnic.is
 created:      September  5 2000
-source:       ISNIC 
-
-nic-hdl:      JENS-IS
-address:      IS
-created:      December 15 1999
 source:       ISNIC 
 
 role:         Internet a Islandi hf.

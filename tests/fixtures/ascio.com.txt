@@ -2,9 +2,9 @@
    Registry Domain ID: 6919846_DOMAIN_COM-VRSN
    Registrar WHOIS Server: whois.ascio.com
    Registrar URL: http://www.ascio.com
-   Updated Date: 2024-06-01T07:11:26Z
+   Updated Date: 2025-06-01T07:12:34Z
    Creation Date: 1999-05-31T10:46:31Z
-   Registry Expiry Date: 2025-05-31T10:47:06Z
+   Registry Expiry Date: 2026-05-31T10:47:06Z
    Registrar: Ascio Technologies, Inc. Danmark - Filial af Ascio technologies, Inc. USA
    Registrar IANA ID: 106
    Registrar Abuse Contact Email: abuse@ascio.com
@@ -17,7 +17,7 @@
    Name Server: NS3.TUCOWS.COM
    DNSSEC: unsigned
    URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of whois database: 2024-11-29T09:42:46Z <<<
+>>> Last update of whois database: 2025-11-30T17:09:31Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

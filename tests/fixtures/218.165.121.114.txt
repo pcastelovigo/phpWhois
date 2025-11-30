@@ -21,14 +21,18 @@ last-modified:  2017-01-20T01:41:38Z
 source:         APNIC
 
 irt:            IRT-HINET-AP
-address:        Taipei, Taiwan, 100
+address:        Chunghwa Telecom Co.,Ltd.
+address:        No.21-3, Sec. 1, Xinyi Rd., Taipei 10048, Taiwan, R.O.C.
+address:        Taipei
+phone:          +886-2-2322-3495
 e-mail:         network-adm@hinet.net
 abuse-mailbox:  abuse@hinet.net
-admin-c:        HN27-AP
-tech-c:         HN27-AP
+admin-c:        TR391-AP
+tech-c:         TR391-AP
+remarks:        (oid:HINET)
 auth:           # Filtered
 mnt-by:         MAINT-TW-TWNIC
-last-modified:  2017-01-20T01:39:18Z
+last-modified:  2025-11-06T07:20:07Z
 source:         APNIC
 
 person:         HINET Network-Adm
@@ -43,9 +47,9 @@ fax-no:         +886 2 2344 2513
 fax-no:         +886 2 2395 5671
 e-mail:         network-adm@hinet.net
 nic-hdl:        HN27-AP
-remarks:        same as TWNIC nic-handle HN184-TW
+remarks:        (hid:HN184-TW)
 mnt-by:         MAINT-TW-TWNIC
-last-modified:  2011-08-22T06:04:01Z
+last-modified:  2025-08-28T07:34:45Z
 source:         APNIC
 
 % Information related to '218.165.0.0 - 218.165.255.255'
@@ -59,16 +63,16 @@ country:        TW
 admin-c:        HN184-TW
 tech-c:         HN184-TW
 mnt-by:         MAINT-TW-TWNIC
+changed:        network-adm@hinet.net 20011011
+status:         ASSIGNED NON-PORTABLE
 remarks:        This information has been partially mirrored by APNIC from
 remarks:        TWNIC. To obtain more specific information, please use the
 remarks:        TWNIC whois server at whois.twnic.net.
-changed:        network-adm@hinet.net 20011011
-status:         ASSIGNED NON-PORTABLE
 source:         TWNIC
 
 person:         HINET Network-Adm
-address:        CHTD, Chunghwa Telecom Co., Ltd.
-address:        Data-Bldg. 6F,  No. 21, Sec. 1, Hsin-Yi Rd.,
+address:        Changhua Telecom Co., Ltd.
+address:        No. 21, Sec. 21, Hsin-Yi Rd.
 address:        Taipei Taiwan
 country:        TW
 phone:          +886-2-2322-3495
@@ -76,7 +80,10 @@ fax-no:         +886-2-2344-2513
 e-mail:         network-adm@hinet.net
 nic-hdl:        HN184-TW
 changed:        hostmaster@twnic.net 20130307
+remarks:        This information has been partially mirrored by APNIC from
+remarks:        TWNIC. To obtain more specific information, please use the
+remarks:        TWNIC whois server at whois.twnic.net.
 source:         TWNIC
 
-% This query was served by the APNIC Whois Service version 1.88.16 (WHOIS-UK4)
+% This query was served by the APNIC Whois Service version 1.88.34 (WHOIS-UK2)
 

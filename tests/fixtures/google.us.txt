@@ -2,9 +2,9 @@ Domain Name: google.us
 Registry Domain ID: D775573-US
 Registrar WHOIS Server: whois.markmonitor.com
 Registrar URL: www.markmonitor.com
-Updated Date: 2024-10-23T23:43:39Z
+Updated Date: 2025-03-22T10:16:13Z
 Creation Date: 2002-04-19T23:16:01Z
-Registry Expiry Date: 2025-04-18T23:59:59Z
+Registry Expiry Date: 2026-04-18T23:59:59Z
 Registrar: MarkMonitor, Inc.
 Registrar IANA ID: 292
 Registrar Abuse Contact Email: registry.admin@markmonitor.com
@@ -72,7 +72,7 @@ Name Server: ns3.google.com
 Name Server: ns4.google.com
 DNSSEC: unsigned
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of WHOIS database: 2024-11-29T09:42:46Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:09:11Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

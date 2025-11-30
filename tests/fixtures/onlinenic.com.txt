@@ -2,20 +2,22 @@
    Registry Domain ID: 9494382_DOMAIN_COM-VRSN
    Registrar WHOIS Server: whois.onlinenic.com
    Registrar URL: http://www.onlinenic.com
-   Updated Date: 2024-11-24T06:14:52Z
+   Updated Date: 2025-11-30T06:02:14Z
    Creation Date: 1999-08-26T07:53:02Z
-   Registry Expiry Date: 2025-08-26T07:53:02Z
+   Registry Expiry Date: 2026-08-26T07:53:02Z
    Registrar: OnlineNIC, Inc.
    Registrar IANA ID: 82
    Registrar Abuse Contact Email: abuse@onlinenic.com
    Registrar Abuse Contact Phone: +1 833-678-1173
    Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
    Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
-   Name Server: NS1.ONLINENIC.NET
-   Name Server: NS5.ONLINENIC.NET
+   Name Server: NS-1525.AWSDNS-62.ORG
+   Name Server: NS-1555.AWSDNS-02.CO.UK
+   Name Server: NS-232.AWSDNS-29.COM
+   Name Server: NS-861.AWSDNS-43.NET
    DNSSEC: unsigned
    URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of whois database: 2024-11-29T09:43:02Z <<<
+>>> Last update of whois database: 2025-11-30T17:09:31Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

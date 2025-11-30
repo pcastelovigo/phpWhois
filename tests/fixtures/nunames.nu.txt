@@ -19,10 +19,10 @@ holder:           qi9c3zbvhr
 created:          1997-05-30
 modified:         2024-06-05
 expires:          2097-05-30
-nserver:          lns3.nudomain.nu 185.136.99.88 2A06:FB00:1:0:0:0:4:88
-nserver:          lns2.nudomain.nu 185.136.98.88 2A06:FB00:1:0:0:0:3:88
-nserver:          lns1.nudomain.nu 185.136.97.88 2A06:FB00:1:0:0:0:2:88
-nserver:          lns0.nudomain.nu 185.136.96.88 2A06:FB00:1:0:0:0:1:88
+nserver:          lns3.nudomain.nu
+nserver:          lns2.nudomain.nu
+nserver:          lns1.nudomain.nu
+nserver:          lns0.nudomain.nu
 nserver:          ns1.worldwidedns.net
 nserver:          ns2.worldwidedns.net
 nserver:          ns3.worldwidedns.net

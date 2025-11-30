@@ -16,7 +16,7 @@
 % 
 % 
 % Whoisd Server Version: 3.15.0
-% Timestamp: Fri Nov 29 10:41:28 2024
+% Timestamp: Sun Nov 30 18:08:03 2025
 
 domain:       nic.cz
 registrant:   CZ-NIC
@@ -51,7 +51,7 @@ contact:      MAPET
 name:         Martin Peterka
 registrar:    REG-MOJEID
 created:      06.03.2002 18:11:00
-changed:      19.10.2020 19:25:15
+changed:      07.04.2025 16:33:55
 
 nsset:        CZ.NIC
 nserver:      d.ns.nic.cz (193.29.206.1, 2001:678:1::1)
@@ -60,19 +60,29 @@ nserver:      b.ns.nic.cz (194.0.13.1, 2001:678:10::1)
 tech-c:       JTALIR
 registrar:    REG-CZNIC
 created:      09.06.2008 14:30:16
-changed:      22.02.2022 10:33:18
+changed:      11.12.2024 12:23:18
 
 contact:      JTALIR
 name:         Jaromír Talíř
 registrar:    REG-MOJEID
 created:      26.10.2010 10:53:34
-changed:      06.09.2023 13:55:31
+changed:      22.01.2025 18:56:06
 
 keyset:       AUTO-ZHHWRIDCGH9F46ZDG2K2VC284
-dnskey:       257 3 13 tdr7F+UrI+L7C0GX6m/23XD8NNvhd+MdkaXsnbG6rr2Nyzpr28p1QfqIGsvEt+3rK9TgrG8dmGxXGNIxhOtF8g==
-tech-c:       CZ-NIC
+dnskey:       257 3 13 f2hk4mhAPz0mPCOAuX7PxC0et4JVPhthlO7jiRXF8qkRMksnilBYb6k5wEYZMLfOw8+GKP1BfitEoTD04ijZfQ==
+tech-c:       CZNIC-AKM
 registrar:    REG-CZNIC
 created:      17.11.2020 14:25:52
-changed:      04.11.2024 16:39:31
+changed:      30.10.2025 22:40:53
+
+contact:      CZNIC-AKM
+org:          CZ.NIC, z.s.p.o.
+name:         CZ.NIC, z.s.p.o.
+address:      Milesovska 1136/5
+address:      Praha 3
+address:      13000
+address:      CZ
+registrar:    REG-CZNIC
+created:      12.08.2024 15:02:38
 
 

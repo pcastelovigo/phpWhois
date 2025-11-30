@@ -2,8 +2,8 @@
 Domain Name:       nic.mx
 
 Created On:        1997-01-15
-Expiration Date:   2025-01-14
-Last Updated On:   2024-03-01
+Expiration Date:   2026-01-14
+Last Updated On:   2025-03-02
 Registrar:         Registry .MX
 URL:               http://www.registry.mx
 

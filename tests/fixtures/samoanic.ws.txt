@@ -1,16 +1,16 @@
 Domain Name: SAMOANIC.WS
-Domain ID: D865CD2902FC835CE040010AAB015FFF
+Domain ID: D865CD2902FC835CE040010AAB015FFF-GDI
 WHOIS Server: 
 Registrar URL: http://samoanic.ws/whois.dhtml
-Updated Date: 2024-03-09T08:22:34Z
-Creation Date: 2000-03-09T18:11:00Z
-Registrar Registration Expiration Date: 2025-03-09T18:11:00Z
+Updated Date: 2025-03-09T09:20:19Z
+Creation Date: 2000-03-09T19:11:00Z
+Registrar Registration Expiration Date: 2026-03-09T19:11:00Z
 Registrar: Computer Services Limited
 Registrar IANA ID: 
 Registrar Abuse Contact Email: helpdesk@samoa.ws
 Registrar Abuse Contact Phone: 68520926
 Domain Status: ok
-Registry Registrant ID:
+Registry Registrant ID: D865CD2902FC835CE040010AAB015FFF-GDI
 Registrant Name: CSL
 Registrant Organization: Computer Services Limited
 Registrant Street: 701 Palomar Airport Rd. 3rd floor  
@@ -23,7 +23,7 @@ Registrant Phone Ext:
 Registrant Fax: 
 Registrant Fax Ext: 
 Registrant Email: domains@samoa.ws
-Registry Admin ID:
+Registry Admin ID: D865CD2902FC835CE040010AAB015FFF-GDI
 Admin Name: CSL
 Admin Organization: Computer Services Limited
 Admin Street: 701 Palomar Airport Rd. 3rd floor  
@@ -36,7 +36,7 @@ Admin Phone Ext:
 Admin Fax: 
 Admin Fax Ext: 
 Admin Email: domains@samoa.ws
-Registry Tech ID:
+Registry Tech ID: D865CD2902FC835CE040010AAB015FFF-GDI
 Tech Name: CSL
 Tech Organization: Computer Services Limited
 Tech Street: 701 Palomar Airport Rd. 3rd floor  
@@ -55,6 +55,6 @@ Name Server: ns4.ncsdi.ws.
 Name Server: ns5.ncsdi.ws.
 DNSSEC: unsigned
 URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
->>> Last update of WHOIS database: 2024-11-29T09:42:51Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:09:14Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp

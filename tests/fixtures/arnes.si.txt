@@ -28,8 +28,8 @@
 
 domain:		arnes.si
 registrar:	Arnes
-registrar-url:	http://www.arnes.si/storitve/splet-posta-strezniki/registracija-si-domene.html
-nameserver:	nanos.arnes.si (193.2.1.105,2001:1470:8000::105)
+registrar-url:	https://www.arnes.si/organizacije/#domene-si
+nameserver:	nanos.arnes.si (193.2.1.105)
 nameserver:	niobe.ijs.si (193.2.4.24,2001:1470:ff80::24)
 nameserver:	ns4.arnes.eu
 nameserver:	ns8.arnes.eu
@@ -38,7 +38,7 @@ nameserver:	aa.arnes.si (193.2.1.87,2001:1470:8000::87)
 registrant:	G31071
 status:		ok
 created:	1992-01-01
-expire:		2025-06-06
+expire:		2026-06-06
 source:		ARNES
 
 Domain holder:

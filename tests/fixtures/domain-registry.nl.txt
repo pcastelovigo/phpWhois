@@ -20,6 +20,6 @@ Domain nameservers:
 
 Creation Date: 1994-09-29
 
-Updated Date: 2021-10-14
+Updated Date: 2025-02-07
 
 Record maintained by: SIDN BV

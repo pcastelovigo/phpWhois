@@ -20,9 +20,9 @@ holder-c:                      GIHU100-FRNIC
 admin-c:                       GIHU101-FRNIC
 tech-c:                        MI3669-FRNIC
 registrar:                     MARKMONITOR Inc.
-Expiry Date:                   2025-12-30T17:16:48Z
+Expiry Date:                   2026-12-30T17:16:48Z
 created:                       2000-07-26T22:00:00Z
-last-update:                   2024-11-28T11:12:28.62146Z
+last-update:                   2025-11-28T10:11:55.150503Z
 source:                        FRNIC
 
 nserver:                       ns1.google.com
@@ -92,7 +92,7 @@ phone:                         +1.2083895740
 fax-no:                        +1.2083895771
 e-mail:                        ccops@markmonitor.com
 registrar:                     MARKMONITOR Inc.
-changed:                       2024-11-27T15:42:59.592845Z
+changed:                       2025-11-26T19:54:39.477615Z
 anonymous:                     NO
 obsoleted:                     NO
 eppstatus:                     associated
@@ -106,5 +106,5 @@ reachsource:                   REGISTRAR
 reachdate:                     2021-10-05T00:00:00Z
 source:                        FRNIC
 
->>> Last update of WHOIS database: 2024-11-29T09:41:50.254524Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:08:22.954484Z <<<
 

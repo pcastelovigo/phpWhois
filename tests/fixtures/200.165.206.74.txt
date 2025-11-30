@@ -1,57 +1,40 @@
-% IP Client: 2a01:e11:600b:280:c8d7:d17c:f327:2597
- 
-% Copyright (c) Nic.br
-%  The use of the data below is only permitted as described in
-%  full by the Use and Privacy Policy at https://registro.br/upp ,
-%  being prohibited its distribution, commercialization or
-%  reproduction, in particular, to use it for advertising or
-%  any similar purpose.
-%  2023-08-11T07:05:28-03:00 - IP: 2a01:e11:600b:280:c8d7:d17c:f327:2597
+% IP Client: 93.70.70.58
+ % Copyright (c) Nic.br - Use of this data is governed by the Use and
+% Privacy Policy at https://registro.br/upp . Distribution,
+% commercialization, reproduction, and use for advertising or similar
+% purposes are expressly prohibited.
+% 2025-11-30T14:10:47-03:00 - 93.70.70.58
 
-inetnum:     200.165.0.0/16
+inetnum:     200.165.192.0/19
 aut-num:     AS7738
-abuse-c:     BTC14
+abuse-c:     SEIVT2
 owner:       V tal
 ownerid:     02.041.460/0001-93
 responsible: BTCM V.Tal
-country:     BR
 owner-c:     SEIVT2
 tech-c:      CGR13
-inetrev:     200.165.206.0/24
-nserver:     ns4.telemar.net.br
-nsstat:      20230811 AA
-nslastaa:    20230811
-nserver:     ns2.telemar.net.br
-nsstat:      20230811 AA
-nslastaa:    20230811
+inetrev:     200.165.192.0/19
+nserver:     ns04-mg-aut.telemar.net.br
+nsstat:      20251129 AA
+nslastaa:    20251129
+nserver:     ns03-rj-aut.telemar.net.br
+nsstat:      20251129 AA
+nslastaa:    20251129
 created:     20010522
-changed:     20221006
+changed:     20250512
 
 nic-hdl-br:  SEIVT2
 person:      Seguranï¿½a da Informaï¿½ï¿½o Vtal
-e-mail:      abuse@vtal.com
-country:     BR
 created:     20230328
 changed:     20230412
 
-nic-hdl-br:  BTC14
-person:      Brasil Telecom S. A. - CNRS
-e-mail:      ld-numeracaoip@vtal.com
-country:     BR
-created:     20031003
-changed:     20220217
-
 nic-hdl-br:  CGR13
 person:      Centro de Gerencia de Rede TELEMAR
-e-mail:      abuse@oi.net.br
-country:     BR
 created:     20000605
-changed:     20170106
+changed:     20240529
 
-% Security and mail abuse issues should also be addressed to
-% cert.br, http://www.cert.br/ , respectivelly to cert@cert.br
-% and mail-abuse@cert.br
+% Security and mail abuse issues should also be addressed to cert.br,
+% respectivelly to cert@cert.br and mail-abuse@cert.br
 %
-% whois.registro.br accepts only direct match queries. Types
-% of queries are: domain (.br), registrant (tax ID), ticket,
-% provider, CIDR block, IP and ASN.
+% whois.registro.br only accepts exact match queries for domains,
+% registrants, contacts, tickets, providers, IPs, and ASNs.

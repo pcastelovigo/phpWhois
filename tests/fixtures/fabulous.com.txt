@@ -7,8 +7,8 @@
    Registry Expiry Date: 2026-12-07T14:41:47Z
    Registrar: Sea Wasp, LLC
    Registrar IANA ID: 411
-   Registrar Abuse Contact Email:
-   Registrar Abuse Contact Phone:
+   Registrar Abuse Contact Email: abuse@fabulous.com
+   Registrar Abuse Contact Phone: +1.5045078209
    Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
    Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
    Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
@@ -18,7 +18,7 @@
    Name Server: NS4.DNSIMPLE-EDGE.ORG
    DNSSEC: unsigned
    URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of whois database: 2024-11-29T09:43:02Z <<<
+>>> Last update of whois database: 2025-11-30T17:09:31Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

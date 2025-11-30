@@ -2,19 +2,19 @@ Domain Name: telstra.com.au
 Registry Domain ID: c7c5840070eb47af81a3e3a836b8baa2-AU
 Registrar WHOIS Server: whois.auda.org.au
 Registrar URL: https://www.cscdigitalbrand.services
-Last Modified: 2024-09-12T03:27:28Z
+Last Modified: 2025-05-10T05:06:12Z
 Registrar Name: Corporation Service Company (Aust) Pty Ltd
 Registrar Abuse Contact Email: domainabuse@cscglobal.com
 Registrar Abuse Contact Phone: +1.8887802723
 Reseller Name: 
-Status: clientDeleteProhibited https://identitydigital.au/get-au/whois-status-codes#clientDeleteProhibited
-Status: serverDeleteProhibited https://identitydigital.au/get-au/whois-status-codes#serverDeleteProhibited
+Status: clientDeleteProhibited https://identitydigital.au/whois-status-codes#clientDeleteProhibited
+Status: serverDeleteProhibited https://identitydigital.au/whois-status-codes#serverDeleteProhibited
 Status Reason: Registry Lock
-Status: serverRenewProhibited https://identitydigital.au/get-au/whois-status-codes#serverRenewProhibited
+Status: serverRenewProhibited https://identitydigital.au/whois-status-codes#serverRenewProhibited
 Status Reason: Not Currently Eligible For Renewal
-Status: serverTransferProhibited https://identitydigital.au/get-au/whois-status-codes#serverTransferProhibited
+Status: serverTransferProhibited https://identitydigital.au/whois-status-codes#serverTransferProhibited
 Status Reason: Registry Lock
-Status: serverUpdateProhibited https://identitydigital.au/get-au/whois-status-codes#serverUpdateProhibited
+Status: serverUpdateProhibited https://identitydigital.au/whois-status-codes#serverUpdateProhibited
 Status Reason: Registry Lock
 Registrant Contact ID: 4e6d4d2d22e14e42afb6f7dd7964ec25-AU
 Registrant Contact Name: Domain Administrator
@@ -26,10 +26,6 @@ Name Server: a18-64.akam.net
 Name Server: a2-65.akam.net
 Name Server: a28-66.akam.net
 Name Server: a3-65.akam.net
-Name Server: adns01.bigpond.com
-Name Server: adns03.bigpond.com
-Name Server: adns04.bigpond.com
-Name Server: adns02.bigpond.com
 Name Server: adns05.bigpond.com
 Name Server: adns06.bigpond.com
 DNSSEC: unsigned
@@ -37,7 +33,7 @@ Registrant: Telstra Corporation Ltd
 Registrant ID: ABN 33051775556
 Eligibility Type: Company
 Eligibility ID: ABN 33051775556
->>> Last update of WHOIS database: 2024-11-29T09:41:20Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:07:46Z <<<
 
 Identity Digital Australia Pty Ltd, for itself and on behalf of .au Domain Administration Limited (auDA), makes the WHOIS registration data directory service (WHOIS Service) available solely for the purposes of:
 

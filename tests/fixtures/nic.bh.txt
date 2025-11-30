@@ -21,16 +21,6 @@ Registrant Country: GB
 Registrant Phone: +44.2033880600
 Registrant Fax: +44.2033880601
 Registrant Email: domains@centralnic.com
-Admin Name: Domain Administrator
-Admin Organization: CentralNic Ltd
-Admin Street: 35-39 Moorgate
-Admin City: London
-Admin State/Province:
-Admin Postal Code: EC2R 6AR
-Admin Country: GB
-Admin Phone: +44.2033880600
-Admin Fax: +44.2033880601
-Admin Email: domains@centralnic.com
 Tech Name: Domain Administrator
 Tech Organization: CentralNic Ltd
 Tech Street: 35-39 Moorgate
@@ -46,25 +36,18 @@ Name Server: B.NIC.BH
 Name Server: C.NIC.BH
 Name Server: D.NIC.BH
 DNSSEC: unsigned
-Billing Name: Domain Administrator
-Billing Organization: CentralNic Ltd
-Billing Street: 35-39 Moorgate
-Billing City: London
-Billing State/Province:
-Billing Postal Code: EC2R 6AR
-Billing Country: GB
-Billing Phone: +44.2033880600
-Billing Fax: +44.2033880601
-Billing Email: domains@centralnic.com
 Registrar Abuse Contact Email: ops@centralnic.com
 Registrar Abuse Contact Phone: +44.2033880600
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of WHOIS database: 2024-11-29T09:40:13.0Z <<<
+>>> Last update of WHOIS database: 2025-11-30T17:07:50.0Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 
 >>> IMPORTANT INFORMATION ABOUT THE DEPLOYMENT OF RDAP: please visit
-https://www.centralnicregistry.com/support/rdap <<<
+https://www.centralnicregistry.com/support/information/rdap <<<
+
+The registration data available in this service is limited. Additional
+data may be available at https://lookup.icann.org
 
 The Whois and RDAP services are provided by CentralNic, and contain
 information pertaining to Internet domain names registered by our
@@ -77,4 +60,4 @@ actions in contravention of these terms will result in being permanently
 blacklisted. All data is (c) CentralNic Ltd (https://www.centralnicregistry.com)
 
 Access to the Whois and RDAP services is rate limited. For more
-information, visit https://registrar-console.centralnicregistry.com/pub/whois_guidance.
+information, visit https://centralnicregistry.com/policies/whois-guidance.

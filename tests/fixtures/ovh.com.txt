@@ -19,7 +19,7 @@
    Name Server: NS200.ANYCAST.ME
    DNSSEC: unsigned
    URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of whois database: 2024-11-29T09:43:02Z <<<
+>>> Last update of whois database: 2025-11-30T17:09:31Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

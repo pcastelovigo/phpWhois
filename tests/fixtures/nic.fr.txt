@@ -15,8 +15,8 @@ eppstatus:                     serverDeleteProhibited
 hold:                          NO
 holder-c:                      NF100-FRNIC
 admin-c:                       AFNI30-FRNIC
-tech-c:                        VL-FRNIC
 tech-c:                        JP-FRNIC
+tech-c:                        VL-FRNIC
 registrar:                     Registry Operations
 Expiry Date:                   2029-12-31T23:00:00Z
 created:                       1995-01-01T00:00:00Z
@@ -69,26 +69,6 @@ reachstatus:                   ok
 reachmedia:                    email
 source:                        FRNIC
 
-nic-hdl:                       VL-FRNIC
-type:                          PERSON
-contact:                       Vincent Levigneron
-address:                       AFNIC
-address:                       7, avenue du 8 mai 1945
-address:                       78280 Guyancourt
-country:                       FR
-phone:                         +33.139308300
-fax-no:                        +33.139308301
-e-mail:                        vincent.levigneron@afnic.fr
-registrar:                     Registry Operations
-changed:                       2024-03-11T13:31:44.500207Z
-anonymous:                     NO
-obsoleted:                     NO
-eppstatus:                     associated
-eppstatus:                     active
-eligstatus:                    not identified
-reachstatus:                   not identified
-source:                        FRNIC
-
 nic-hdl:                       AFNI30-FRNIC
 type:                          ORGANIZATION
 contact:                       ASS FRANC NOMMAGE INTERNET EN COOP
@@ -128,5 +108,25 @@ eligstatus:                    not identified
 reachstatus:                   not identified
 source:                        FRNIC
 
->>> Last update of WHOIS database: 2024-11-29T09:41:49.185276Z <<<
+nic-hdl:                       VL-FRNIC
+type:                          PERSON
+contact:                       Vincent Levigneron
+address:                       AFNIC
+address:                       7, avenue du 8 mai 1945
+address:                       78280 Guyancourt
+country:                       FR
+phone:                         +33.139308300
+fax-no:                        +33.139308301
+e-mail:                        vincent.levigneron@afnic.fr
+registrar:                     Registry Operations
+changed:                       2024-03-11T13:31:44.500207Z
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     associated
+eppstatus:                     active
+eligstatus:                    not identified
+reachstatus:                   not identified
+source:                        FRNIC
+
+>>> Last update of WHOIS database: 2025-11-30T17:08:22.091816Z <<<
 
