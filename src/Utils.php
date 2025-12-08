@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
  * @license
@@ -15,8 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
- * @link http://phpwhois.pw
+ * @see http://phpwhois.pw
  * @copyright Copyright (C)1999,2005 easyDNS Technologies Inc. & Mark Jeftovic
  * @copyright Maintained by David Saez
  * @copyright Copyright (c) 2014 Dmitry Lukashin
@@ -25,45 +25,48 @@
 namespace phpWhois;
 
 /**
- * Additional utils
+ * Additional utils.
  */
 class Utils extends Whois
 {
     /**
-     * Wrap result in <pre></pre> tags
-     * @param $obj
+     * Wrap result in <pre></pre> tags.
+     *
+     * @param  mixed  $obj
      * @return string
      */
     public function showObject(&$obj)
     {
         $r = $this->debugObject($obj);
-        return "<pre>$r</pre>\n";
+
+        return "<pre>{$r}</pre>\n";
     }
 
     /**
-     * Return object or array as formatted string
-     * @param $obj
-     * @param int $indent
+     * Return object or array as formatted string.
+     *
+     * @param  mixed  $obj
      * @return string
      */
-    public function debugObject($obj, int $indent=0)
+    public function debugObject($obj, int $indent = 0)
     {
-		$return = '';
+        $return = '';
 
-        if( !is_array($obj) ){
-			return $return;
-		}
+        if (!is_array($obj)) {
+            return $return;
+        }
 
-		foreach ($obj as $k => $v) {
-			$return .= str_repeat('&nbsp;', $indent);
-			if (is_array($v)) {
-				$return .= $k . "->Array\n";
-				$return .= $this->debugObject($v, $indent + 1);
-			} else {
-				$return .= $k . "->$v\n";
-			}
-		}
-		return $return;
+        foreach ($obj as $k => $v) {
+            $return .= str_repeat('&nbsp;', $indent);
+            if (is_array($v)) {
+                $return .= $k."->Array\n";
+                $return .= $this->debugObject($v, $indent + 1);
+            } else {
+                $return .= $k."->{$v}\n";
+            }
+        }
+
+        return $return;
     }
 
     public function nsRrDefined($query)
@@ -72,16 +75,19 @@ class Utils extends Whois
     }
 
     /**
-     * Get nice HTML output
+     * Get nice HTML output.
+     *
+     * @param mixed $result
+     * @param mixed $link_myself
+     * @param mixed $params
      */
     public function showHTML($result, $link_myself = true, $params = 'query=$0&amp;output=nice')
     {
-
         // adds links for HTML output
 
-        $email_regex = "/([-_\w\.]+)(@)([-_\w\.]+)\b/i";
-        $html_regex = "/(?:^|\b)((((http|https|ftp):\/\/)|(www\.))([\w\.]+)([,:%#&\/?~=\w+\.-]+))(?:\b|$)/is";
-        $ip_regex = "/\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/i";
+        $email_regex = '/([-_\w\.]+)(@)([-_\w\.]+)\b/i';
+        $html_regex = '/(?:^|\b)((((http|https|ftp):\/\/)|(www\.))([\w\.]+)([,:%#&\/?~=\w+\.-]+))(?:\b|$)/is';
+        $ip_regex = '/\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/i';
 
         $out = '';
         $lempty = true;
@@ -89,17 +95,16 @@ class Utils extends Whois
         foreach ($result['rawdata'] as $line) {
             $line = trim($line);
 
-            if ($line == '') {
+            if ('' == $line) {
                 if ($lempty) {
                     continue;
-                } else {
-                    $lempty = true;
                 }
+                $lempty = true;
             } else {
                 $lempty = false;
             }
 
-            $out .= $line . "\n";
+            $out .= $line."\n";
         }
 
         if ($lempty) {
@@ -111,28 +116,28 @@ class Utils extends Whois
         $out = preg_replace_callback(
             $html_regex,
             function ($matches) {
-                if (substr($matches[0], 0, 4) == 'www.') {
+                if ('www.' == substr($matches[0], 0, 4)) {
                     $web = $matches[0];
-                    $url = 'http://' . $web;
+                    $url = 'http://'.$web;
                 } else {
                     $web = $matches[0];
                     $url = $web;
                 }
 
-                return '<a href="' . $url . '" target="_blank">' . $web . '</a>';
+                return '<a href="'.$url.'" target="_blank">'.$web.'</a>';
             },
             $out
         );
 
         if ($link_myself) {
-            if ($params[0] == '/') {
+            if ('/' == $params[0]) {
                 $link = $params;
             } else {
-                $link = $_SERVER['PHP_SELF'] . '?' . $params;
+                $link = $_SERVER['PHP_SELF'].'?'.$params;
             }
 
-            if (strpos($out, '<a href=') === false) {
-                $out = preg_replace($ip_regex, '<a href="' . $link . '">$0</a>', $out);
+            if (false === strpos($out, '<a href=')) {
+                $out = preg_replace($ip_regex, '<a href="'.$link.'">$0</a>', $out);
             }
 
             if (isset($result['regrinfo']['domain']['nserver'])) {
@@ -147,7 +152,7 @@ class Utils extends Whois
 
             if (is_array($nserver)) {
                 foreach ($nserver as $host => $ip) {
-                    $url = '<a href="' . str_replace('$0', $ip, $link) . "\">$host</a>";
+                    $url = '<a href="'.str_replace('$0', $ip, $link)."\">{$host}</a>";
                     $out = str_replace($host, $url, $out);
                     $out = str_replace(strtoupper($host), $url, $out);
                 }
@@ -155,10 +160,10 @@ class Utils extends Whois
         }
 
         // Add bold field names
-        $out = preg_replace("/(?m)^([-\s\.&;'\w\t\(\)\/]+:\s*)/", '<b>$1</b>', $out);
+        $out = preg_replace("/(?m)^([-\\s\\.&;'\\w\t\\(\\)\\/]+:\\s*)/", '<b>$1</b>', $out);
 
         // Add italics for disclaimer
-        $out = preg_replace("/(?m)^(%.*)/", '<i>$0</i>', $out);
+        $out = preg_replace('/(?m)^(%.*)/', '<i>$0</i>', $out);
 
         return str_replace("\n", "<br/>\n", $out);
     }
@@ -166,38 +171,37 @@ class Utils extends Whois
     public static function utf8Encode($str): string
     {
         // PHP 7.2
-        if(PHP_VERSION_ID >= 70200 && PHP_VERSION_ID < 80000){
+        if (PHP_VERSION_ID >= 70200 && PHP_VERSION_ID < 80000) {
             return utf8_encode($str);
         }
 
         // PHP >= 8.0 + ext-mbstring
-        if(function_exists('mb_convert_encoding')){
-            return mb_convert_encoding($str,'UTF-8','ISO-8859-1');
+        if (function_exists('mb_convert_encoding')) {
+            return mb_convert_encoding($str, 'UTF-8', 'ISO-8859-1');
         }
 
         // PHP >= 8.0 + ext-iconv
-        if(function_exists('iconv')){
-            $converted = @iconv('ISO-8859-1','UTF-8',$str);
-            if ($converted !== false) {
+        if (function_exists('iconv')) {
+            $converted = @iconv('ISO-8859-1', 'UTF-8', $str);
+            if (false !== $converted) {
                 return $converted;
             }
         }
 
         // PHP >= 8.0 without "ext-mbstring" or "ext-iconv" - ugly, but better than nothing
         return strtr($str, [
-            "\xE0" => "à", "\xE1" => "á", "\xE2" => "â", "\xE3" => "ã", "\xE4" => "ä", "\xE5" => "å",
-            "\xE8" => "è", "\xE9" => "é", "\xEA" => "ê", "\xEB" => "ë",
-            "\xEC" => "ì", "\xED" => "í", "\xEE" => "î", "\xEF" => "ï",
-            "\xF2" => "ò", "\xF3" => "ó", "\xF4" => "ô", "\xF5" => "õ", "\xF6" => "ö",
-            "\xF9" => "ù", "\xFA" => "ú", "\xFB" => "û", "\xFC" => "ü",
-            "\xC0" => "À", "\xC1" => "Á", "\xC2" => "Â", "\xC3" => "Ã", "\xC4" => "Ä", "\xC5" => "Å",
-            "\xC8" => "È", "\xC9" => "É", "\xCA" => "Ê", "\xCB" => "Ë",
-            "\xCC" => "Ì", "\xCD" => "Í", "\xCE" => "Î", "\xCF" => "Ï",
-            "\xD2" => "Ò", "\xD3" => "Ó", "\xD4" => "Ô", "\xD5" => "Õ", "\xD6" => "Ö",
-            "\xD9" => "Ù", "\xDA" => "Ú", "\xDB" => "Û", "\xDC" => "Ü",
-            "\xF1" => "ñ", "\xD1" => "Ñ",
-            "\xDF" => "ß",
+            "\xE0" => 'à', "\xE1" => 'á', "\xE2" => 'â', "\xE3" => 'ã', "\xE4" => 'ä', "\xE5" => 'å',
+            "\xE8" => 'è', "\xE9" => 'é', "\xEA" => 'ê', "\xEB" => 'ë',
+            "\xEC" => 'ì', "\xED" => 'í', "\xEE" => 'î', "\xEF" => 'ï',
+            "\xF2" => 'ò', "\xF3" => 'ó', "\xF4" => 'ô', "\xF5" => 'õ', "\xF6" => 'ö',
+            "\xF9" => 'ù', "\xFA" => 'ú', "\xFB" => 'û', "\xFC" => 'ü',
+            "\xC0" => 'À', "\xC1" => 'Á', "\xC2" => 'Â', "\xC3" => 'Ã', "\xC4" => 'Ä', "\xC5" => 'Å',
+            "\xC8" => 'È', "\xC9" => 'É', "\xCA" => 'Ê', "\xCB" => 'Ë',
+            "\xCC" => 'Ì', "\xCD" => 'Í', "\xCE" => 'Î', "\xCF" => 'Ï',
+            "\xD2" => 'Ò', "\xD3" => 'Ó', "\xD4" => 'Ô', "\xD5" => 'Õ', "\xD6" => 'Ö',
+            "\xD9" => 'Ù', "\xDA" => 'Ú', "\xDB" => 'Û', "\xDC" => 'Ü',
+            "\xF1" => 'ñ', "\xD1" => 'Ñ',
+            "\xDF" => 'ß',
         ]);
     }
-
 }

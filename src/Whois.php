@@ -66,6 +66,7 @@ class Whois extends WhoisClient
      *  Lookup query and return raw whois data.
      *
      * @param  bool                      $is_utf True if domain name encoding is utf-8 already, otherwise convert it with utf8_encode() first
+     * @param  mixed                     $domain
      * @return string
      * @throws InvalidCharacterException
      */
@@ -350,15 +351,18 @@ class Whois extends WhoisClient
             }
 
             return self::QTYPE_UNKNOWN;
-        } elseif ($ipTools->validIp($query, 'ipv6', false)) {
+        }
+        if ($ipTools->validIp($query, 'ipv6', false)) {
             if ($ipTools->validIp($query, 'ipv6')) {
                 return self::QTYPE_IPV6;
             }
 
             return self::QTYPE_UNKNOWN;
-        } elseif (!empty($query) && false !== strpos($query, '.')) {
+        }
+        if (!empty($query) && false !== strpos($query, '.')) {
             return self::QTYPE_DOMAIN;
-        } elseif (!empty($query) && false === strpos($query, '.')) {
+        }
+        if (!empty($query) && false === strpos($query, '.')) {
             return self::QTYPE_AS;
         }
 
