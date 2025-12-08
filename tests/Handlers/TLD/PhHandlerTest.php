@@ -19,7 +19,7 @@
  * @copyright Copyright (c) 2018 Joshua Smith
  */
 
-namespace Handlers\TLD;
+namespace Tests\Handlers\TLD;
 
 use phpWhois\Handlers\TLD\PhHandler;
 use Tests\Handlers\AbstractHandler;

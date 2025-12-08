@@ -5,7 +5,7 @@
  * @license   See LICENSE file
  */
 
-namespace Handlers\TLD;
+namespace Tests\Handlers\TLD;
 
 use DMS\PHPUnitExtensions\ArraySubset\Assert;
 use phpWhois\Handlers\TLD\KiwiHandler;

@@ -19,7 +19,7 @@
  * @copyright Copyright (c) 2020 Joshua Smith
  */
 
-namespace Handlers\TLD;
+namespace Tests\Handlers\TLD;
 
 use DMS\PHPUnitExtensions\ArraySubset\Assert;
 use phpWhois\Handlers\TLD\HuHandler;

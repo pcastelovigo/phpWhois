@@ -5,10 +5,11 @@
  * @license   See LICENSE file
  */
 
-namespace Tests\Handlers;
+namespace Tests\Handlers\TLD;
 
 use DMS\PHPUnitExtensions\ArraySubset\Assert;
 use phpWhois\Handlers\TLD\BrHandler;
+use Tests\Handlers\AbstractHandler;
 
 /**
  * BrHandlerTest.

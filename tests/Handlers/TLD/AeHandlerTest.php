@@ -19,10 +19,11 @@
  * @copyright Copyright (c) 2018 Joshua Smith
  */
 
-namespace Tests\Handlers;
+namespace Tests\Handlers\TLD;
 
 use DMS\PHPUnitExtensions\ArraySubset\Assert;
 use phpWhois\Handlers\TLD\AeHandler;
+use Tests\Handlers\AbstractHandler;
 
 /**
  * AeHandlerTest.

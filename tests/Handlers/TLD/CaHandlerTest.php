@@ -19,9 +19,10 @@
  * @copyright Copyright (c) 2020 Joshua Smith
  */
 
-namespace Tests\Handlers;
+namespace Tests\Handlers\TLD;
 
 use phpWhois\Handlers\TLD\CaHandler;
+use Tests\Handlers\AbstractHandler;
 
 /**
  * CaHandlerTest.
