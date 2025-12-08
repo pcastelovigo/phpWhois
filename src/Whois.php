@@ -26,6 +26,7 @@ namespace phpWhois;
 
 use Algo26\IdnaConvert\Exception\{AlreadyPunycodeException, InvalidCharacterException};
 use Algo26\IdnaConvert\ToIdn;
+use phpWhois\Handlers\TLD\IpHandler;
 
 /**
  * phpWhois main class.
@@ -129,7 +130,7 @@ class Whois extends WhoisClient
                     $this->query['server'] = 'whois.arin.net';
                     $this->query['args'] = "n {$ip}";
                     $this->query['file'] = 'whois.ip.php';
-                    $this->query['handler'] = 'ip';
+                    $this->query['handler'] = IpHandler::class;
                 }
                 $this->query['host_ip'] = $ip;
                 $this->query['query'] = $ip;
@@ -164,8 +165,8 @@ class Whois extends WhoisClient
                     $as = $ip;
                 }
                 $this->query['args'] = "a {$as}";
-                $this->query['file'] = 'whois.ip.php';
-                $this->query['handler'] = 'ip';
+                //                $this->query['file'] = 'whois.ip.php';
+                $this->query['handler'] = IpHandler::class;
                 $this->query['query'] = $ip;
                 $this->query['tld'] = 'as';
 
@@ -237,7 +238,10 @@ class Whois extends WhoisClient
                 }
 
                 // Regular handler exists for the tld ?
-                if (file_exists(__DIR__.'/whois.'.$htld.'.php')) {
+                var_dump($htld);
+
+                exit;
+                if (file_exists(__DIR__.'/TLD/whois.'.$htld.'.php')) {
                     $handler = $htld;
 
                     break;

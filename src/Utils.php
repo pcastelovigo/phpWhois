@@ -69,11 +69,6 @@ class Utils extends Whois
         return $return;
     }
 
-    public function nsRrDefined($query)
-    {
-        return checkdnsrr($query, 'NS');
-    }
-
     /**
      * Get nice HTML output.
      *
@@ -204,4 +199,6 @@ class Utils extends Whois
             "\xDF" => 'ß',
         ]);
     }
+
+
 }

@@ -474,16 +474,17 @@ class WhoisClient
     {
         $handlerName = $this->loadHandler($this->query['handler']);
 
-        if (false === $handlerName) {
+        if ($handlerName === false) {
             $handlerName = $this->loadLegacyHandler($this->query['handler'], $this->query['file']);
         }
 
-        if (false === $handlerName) {
-            $this->query['errstr'][] = "Can't find {$this->query['handler']} handler: ".$this->query['file'];
+        if ($handlerName === false) {
+            $this->query['errstr'][] = "Can't find {$this->query['handler']} ";
 
             return $result;
         }
 
+        // TODO: understand when this case
         if (!$this->gtldRecurse && 'whois.gtld.php' === $this->query['file']) {
             return $result;
         }
