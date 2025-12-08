@@ -30,7 +30,7 @@ class OrgZaHandler extends AbstractHandler
 {
     public $deepWhois = false;
 
-    public function parse($data, $query): array
+    public function parse($data_str, $query): array
     {
         $items = [
             'domain.status' => 'Status:',
@@ -44,7 +44,7 @@ class OrgZaHandler extends AbstractHandler
         ];
 
         $r = [];
-        $r['regrinfo'] = static::getBlocks($data['rawdata'], $items);
+        $r['regrinfo'] = static::getBlocks($data_str['rawdata'], $items);
 
         if (isset($r['regrinfo']['domain']['status'])) {
             $r['regrinfo']['registered'] = 'yes';

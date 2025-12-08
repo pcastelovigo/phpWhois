@@ -111,11 +111,10 @@ class Utils extends Whois
         $out = preg_replace_callback(
             $html_regex,
             function ($matches) {
+                $web = $matches[0];
                 if ('www.' == substr($matches[0], 0, 4)) {
-                    $web = $matches[0];
                     $url = 'http://'.$web;
                 } else {
-                    $web = $matches[0];
                     $url = $web;
                 }
 
@@ -199,6 +198,4 @@ class Utils extends Whois
             "\xDF" => 'ß',
         ]);
     }
-
-
 }

@@ -21,7 +21,7 @@ class IpToolsTest extends TestCase
         $this->assertTrue($ipTools->validIp($ip));
     }
 
-    public function validIpsProvider()
+    public static function validIpsProvider()
     {
         return [
             ['123.123.123.123'],
@@ -39,7 +39,7 @@ class IpToolsTest extends TestCase
         $this->assertFalse($ipTools->validIp($ip));
     }
 
-    public function invalidIpsProvider(): array
+    public static function invalidIpsProvider(): array
     {
         return [
             [''],

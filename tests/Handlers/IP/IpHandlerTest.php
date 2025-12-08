@@ -26,7 +26,7 @@ class IpHandlerTest extends TestCase
         static::assertTrue(is_array($result));
     }
 
-    public function ipsList(): array
+    public static function ipsList(): array
     {
         return [
             ['216.58.209.195'],

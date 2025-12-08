@@ -1,7 +1,5 @@
 <?php
 
-/** @noinspection PhpIllegalPsrClassPathInspection */
-
 namespace phpWhois\Handlers\TLD;
 
 use phpWhois\Handlers\AbstractHandler;
