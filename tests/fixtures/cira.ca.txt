@@ -73,7 +73,7 @@ Name Server: ns3.cira.ca
 Name Server: ns4.cira.ca
 DNSSEC: signedDelegation
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of WHOIS database: 2025-11-30T17:06:07Z <<<
+>>> Last update of WHOIS database: 2025-12-08T10:37:53Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

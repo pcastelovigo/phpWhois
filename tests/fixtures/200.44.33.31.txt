@@ -12,7 +12,7 @@
 %  related to AS and IP numbers registrations
 %  By submitting a whois query, you agree to use this data
 %  only for lawful purposes.
-%  2025-11-30 14:10:45 (-03 -03:00)
+%  2025-12-08 07:56:23 (-03 -03:00)
 
 inetnum:     200.44.0.0/16
 status:      allocated
@@ -29,17 +29,17 @@ tech-c:      LUM
 abuse-c:     LUM
 inetrev:     200.44.0.0/16
 nserver:     NS1.CANTV.NET
-nsstat:      20251128 TIMEOUT
-nslastaa:    20251125
+nsstat:      20251204 AA
+nslastaa:    20251204
 nserver:     NS2.CANTV.NET
-nsstat:      20251128 AA
-nslastaa:    20251128
+nsstat:      20251204 AA
+nslastaa:    20251204
 nserver:     DNS1.CANTV.NET
-nsstat:      20251128 AA
-nslastaa:    20251128
+nsstat:      20251204 AA
+nslastaa:    20251204
 nserver:     DNS2.CANTV.NET
-nsstat:      20251128 AA
-nslastaa:    20251128
+nsstat:      20251204 AA
+nslastaa:    20251204
 created:     19980317
 changed:     20020114
 

@@ -39,7 +39,7 @@ DNSSEC: unsigned
 Registrar Abuse Contact Email: ops@centralnic.com
 Registrar Abuse Contact Phone: +44.2033880600
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of WHOIS database: 2025-11-30T17:07:50.0Z <<<
+>>> Last update of WHOIS database: 2025-12-08T10:39:15.0Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 

@@ -16,7 +16,7 @@
 % 
 % 
 % Whoisd Server Version: 3.15.0
-% Timestamp: Sun Nov 30 18:08:03 2025
+% Timestamp: Mon Dec 08 11:39:27 2025
 
 domain:       nic.cz
 registrant:   CZ-NIC
@@ -45,7 +45,7 @@ contact:      FEELA
 name:         Ondřej Filip
 registrar:    REG-MOJEID
 created:      04.01.2005 13:35:00
-changed:      03.12.2021 16:48:58
+changed:      06.12.2025 15:00:04
 
 contact:      MAPET
 name:         Martin Peterka

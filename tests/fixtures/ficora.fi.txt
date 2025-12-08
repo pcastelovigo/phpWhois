@@ -22,7 +22,7 @@ dnssec.............: no
 
 Holder
 
-name...............: Liikenne- ja viestint?virasto Traficom
+name...............: Liikenne- ja viestintävirasto Traficom
 register number....: 2924753-3
 address............: PL 320
 postal.............: 00059
@@ -33,10 +33,10 @@ holder email.......:
 
 Registrar
 
-registrar..........: Liikenne- ja viestint?virasto Traficom
+registrar..........: Liikenne- ja viestintävirasto Traficom
 
->>> Last update of WHOIS database: 30.11.2025 19:00:13 (EET) <<<
+>>> Last update of WHOIS database: 8.12.2025 12:30:16 (EET) <<<
 
 
 Copyright (c) Finnish Transport and Communications Agency Traficom
-
+

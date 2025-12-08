@@ -55,7 +55,7 @@ Name Server: ns01.nic.ag
 Name Server: ns02.nic.ag
 DNSSEC: unsigned
 URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
->>> Last update of WHOIS database: 2025-11-30T17:07:42Z <<<
+>>> Last update of WHOIS database: 2025-12-08T10:39:08Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 
