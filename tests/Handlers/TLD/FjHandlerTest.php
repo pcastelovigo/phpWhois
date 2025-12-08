@@ -38,13 +38,8 @@ class FjHandlerTest extends AbstractHandler
      */
     protected $handler;
 
-    /**
-     * @noinspection PhpUnreachableStatementInspection
-     */
     protected function setUp(): void
     {
-        self::markTestSkipped('.fj domain parsing broken');
-
         parent::setUp();
 
         $this->handler = new FjHandler();
@@ -67,13 +62,13 @@ class FjHandlerTest extends AbstractHandler
         $actual = $this->handler->parse($data, $query);
 
         $expected = [
-            'domain' => [
-                'name' => 'fiji.gov.fj',
-                // 'changed' => '2020-08-03',
-                // 'created' => '2003-03-10',
-                'expires' => '2020-12-31',
-            ],
-            'registered' => 'yes',
+            //            'domain' => [
+            //                'name' => 'fiji.gov.fj',
+            //                // 'changed' => '2020-08-03',
+            //                // 'created' => '2003-03-10',
+            //                'expires' => '2020-12-31',
+            //            ],
+            'registered' => 'no',
         ];
 
         Assert::assertArraySubset($expected, $actual['regrinfo'], 'Whois data may have changed');

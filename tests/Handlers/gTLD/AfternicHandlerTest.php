@@ -36,12 +36,8 @@ class AfternicHandlerTest extends AbstractHandler
      */
     protected $handler;
 
-    /**
-     * @noinspection PhpUnreachableStatementInspection
-     */
     protected function setUp(): void
     {
-        self::markTestSkipped('Not sure what to do with this yet');
         parent::setUp();
 
         $this->handler = new AfternicHandler();
@@ -65,16 +61,17 @@ class AfternicHandlerTest extends AbstractHandler
         $actual = $this->handler->parse($data, $query);
 
         $expected = [
-            'domain' => [
-                'name' => 'buydomains.com',
-                // 'changed' => '2020-08-03',
-                'created' => '2003-03-10',
-                'expires' => '2023-05-08',
-            ],
-            'registered' => 'yes',
+            'regrinfo' => [
+                'domain' => [
+                    'name' => 'BUYDOMAINS.COM',
+                    // 'changed' => '2021-11-16',
+                    'created' => '1997-03-30',
+                    'expires' => '2029-03-31',
+                ], ],
+            //            'registered' => 'yes',
         ];
 
-        Assert::assertArraySubset($expected, $actual['regrinfo'], 'Whois data may have changed');
+        Assert::assertArraySubset($expected, $actual, 'Whois data may have changed');
         $this->assertArrayHasKey('rawdata', $actual);
         Assert::assertArraySubset($fixture, $actual['rawdata'], 'Fixture data may be out of date');
     }

@@ -26,6 +26,7 @@ namespace phpWhois;
 
 use Algo26\IdnaConvert\Exception\{AlreadyPunycodeException, InvalidCharacterException};
 use Algo26\IdnaConvert\ToIdn;
+use phpWhois\Handlers\IP\RipeHandler;
 use phpWhois\Handlers\TLD\IpHandler;
 
 /**
@@ -129,7 +130,6 @@ class Whois extends WhoisClient
                 } else {
                     $this->query['server'] = 'whois.arin.net';
                     $this->query['args'] = "n {$ip}";
-                    $this->query['file'] = 'whois.ip.php';
                     $this->query['handler'] = IpHandler::class;
                 }
                 $this->query['host_ip'] = $ip;
@@ -147,8 +147,7 @@ class Whois extends WhoisClient
                     $this->query['server'] = $this->WHOIS_SPECIAL['ip'];
                 } else {
                     $this->query['server'] = 'whois.ripe.net';
-                    $this->query['file'] = 'whois.ip.ripe.php';
-                    $this->query['handler'] = 'ripe';
+                    $this->query['handler'] = RipeHandler::class;
                 }
                 $this->query['query'] = $ip;
                 $this->query['tld'] = 'ip';
@@ -165,7 +164,6 @@ class Whois extends WhoisClient
                     $as = $ip;
                 }
                 $this->query['args'] = "a {$as}";
-                //                $this->query['file'] = 'whois.ip.php';
                 $this->query['handler'] = IpHandler::class;
                 $this->query['query'] = $ip;
                 $this->query['tld'] = 'as';
@@ -186,16 +184,14 @@ class Whois extends WhoisClient
         }
 
         // Search the correct whois server
-        $special_tlds = $this->WHOIS_SPECIAL;
-
         foreach ($tldtests as $tld) {
             // Test if we know in advance that no whois server is
             // available for this domain and that we can get the
             // data via http or whois request
-            if (isset($special_tlds[$tld])) {
-                $val = $special_tlds[$tld];
+            if (isset($this->WHOIS_SPECIAL[$tld])) {
+                $val = $this->WHOIS_SPECIAL[$tld];
 
-                if ('' == $val) {
+                if ($val == '') {
                     return $this->unknown();
                 }
 
@@ -207,7 +203,7 @@ class Whois extends WhoisClient
             }
         }
 
-        if ('' == $server) {
+        if ($server == '') {
             foreach ($tldtests as $tld) {
                 // Determine the top level domain, and it's whois server using
                 // DNS lookups on 'whois-servers.net'.
@@ -237,16 +233,11 @@ class Whois extends WhoisClient
                     break;
                 }
 
-                if (file_exists(__DIR__.'/TLD/whois.'.$htld.'.php')) {
-                    $handler = $htld;
-
-                    break;
-                }
+                $handler = $this->loadHandler($htld);
             }
 
             // If there is a handler set it
             if ($handler != '') {
-                $this->query['file'] = "whois.{$handler}.php";
                 $this->query['handler'] = $handler;
             }
 

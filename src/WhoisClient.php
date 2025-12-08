@@ -24,6 +24,8 @@
 
 namespace phpWhois;
 
+use phpWhois\Handlers\gTLD\GtldHandler;
+
 /**
  * phpWhois basic class.
  *
@@ -126,8 +128,8 @@ class WhoisClient
 
         // Check if protocol is http
         if (
-            0 === strpos($this->query['server'], 'http://')
-            || 0 === strpos($this->query['server'], 'https://')
+            strpos($this->query['server'], 'http://') === 0
+            || strpos($this->query['server'], 'https://') === 0
         ) {
             $output = $this->httpQuery($this->query['server']);
 
@@ -141,7 +143,7 @@ class WhoisClient
             $this->query['args'] = substr(strstr($this->query['server'], '?'), 1);
             $this->query['server'] = strtok($this->query['server'], '?');
 
-            if (0 === strpos($this->query['server'], 'http://')) {
+            if (strpos($this->query['server'], 'http://') === 0) {
                 $this->query['server_port'] = 80;
             } else {
                 $this->query['server_port'] = 443;
@@ -174,11 +176,11 @@ class WhoisClient
 
             $this->query['args'] = $query_args;
 
-            if (0 === strpos($this->query['server'], 'rwhois://')) {
+            if (strpos($this->query['server'], 'rwhois://') === 0) {
                 $this->query['server'] = substr($this->query['server'], 9);
             }
 
-            if (0 === strpos($this->query['server'], 'whois://')) {
+            if (strpos($this->query['server'], 'whois://') === 0) {
                 $this->query['server'] = substr($this->query['server'], 8);
             }
 
@@ -475,17 +477,12 @@ class WhoisClient
         $handlerName = $this->loadHandler($this->query['handler']);
 
         if ($handlerName === false) {
-            $handlerName = $this->loadLegacyHandler($this->query['handler'], $this->query['file']);
-        }
-
-        if ($handlerName === false) {
             $this->query['errstr'][] = "Can't find {$this->query['handler']} ";
 
             return $result;
         }
 
-        // TODO: understand when this case
-        if (!$this->gtldRecurse && 'whois.gtld.php' === $this->query['file']) {
+        if (!$this->gtldRecurse && ($handlerName === GtldHandler::class)) {
             return $result;
         }
 
@@ -528,15 +525,13 @@ class WhoisClient
                 $this->query['handler'] = $this->WHOIS_GTLD_HANDLER[$wserver];
             } else {
                 $parts = explode('.', $wserver);
-                $hname = strtolower($parts[1]);
-
-                if (($fp = @fopen('whois.gtld.'.$hname.'.php', 'rb', 1)) and fclose($fp)) {
-                    $this->query['handler'] = $hname;
+                $handler = '\phpWhois\Handlers\gTLD\\'.strtolower($parts[1]).'Handler';
+                if (class_exists($handler)) {
+                    $this->query['handler'] = $handler;
                 }
             }
 
             if (!empty($this->query['handler'])) {
-                $this->query['file'] = sprintf('whois.gtld.%s.php', $this->query['handler']);
                 $regrinfo = $this->process($subresult); // $result['rawdata']);
                 $result['regrinfo'] = $this->mergeResults($result['regrinfo'], $regrinfo);
             }
@@ -669,34 +664,24 @@ class WhoisClient
      */
     protected function loadHandler(string $queryHandler)
     {
+        if (class_exists($queryHandler)) {
+            return $queryHandler;
+        }
+
         $queryHandler = ucfirst($queryHandler);
-        $handlerName = "phpWhois\\Handlers\\{$queryHandler}Handler";
-        if (class_exists($handlerName)) {
-            return $handlerName;
+
+        $handlers_class = [
+            "phpWhois\\Handlers\\gTLD\\{$queryHandler}Handler",
+            "phpWhois\\Handlers\\IP\\{$queryHandler}Handler",
+            "phpWhois\\Handlers\\TLD\\{$queryHandler}Handler",
+        ];
+
+        foreach ($handlers_class as $handlerName) {
+            if (class_exists($handlerName)) {
+                return $handlerName;
+            }
         }
 
         return false;
-    }
-
-    /**
-     * @return bool|string
-     */
-    protected function loadLegacyHandler(string $queryHandler, string $queryFile)
-    {
-        $handler_name = str_replace('.', '_', $queryHandler);
-
-        // If the handler has not already been included somehow, include it now
-        $HANDLER_FLAG = sprintf('__%s_HANDLER__', strtoupper($handler_name));
-
-        if (!defined($HANDLER_FLAG)) {
-            include $queryFile;
-        }
-
-        // If the handler has still not been included, append to query errors list and return
-        if (!defined($HANDLER_FLAG)) {
-            return false;
-        }
-
-        return $handler_name.'_handler';
     }
 }

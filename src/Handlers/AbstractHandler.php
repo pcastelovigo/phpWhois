@@ -432,13 +432,13 @@ abstract class AbstractHandler implements HandlerInterface
         $endtag = '';
 
         while ($val = current($rawdata)) {
-            if (false === next($rawdata)) {
+            if (next($rawdata) === false) {
                 // No more data
                 break;
             }
 
             $val = trim($val);
-            if ('' === $val) {
+            if ($val === '') {
                 continue;
             }
 
@@ -447,7 +447,7 @@ abstract class AbstractHandler implements HandlerInterface
             foreach ($items as $field => $match) {
                 $pos = strpos($val, $match);
 
-                if ('' !== $field && false !== $pos) {
+                if ($field !== '' && $pos !== false) {
                     if ($val === $match) {
                         $found = true;
                         $endtag = '';
@@ -458,7 +458,7 @@ abstract class AbstractHandler implements HandlerInterface
 
                     $last = $val[strlen($val) - 1];
 
-                    if (':' === $last || '-' === $last || ']' === $last) {
+                    if ($last === ':' || $last === '-' || $last === ']') {
                         $found = true;
                         $endtag = $last;
                         $line = $val;
@@ -483,27 +483,27 @@ abstract class AbstractHandler implements HandlerInterface
 
             // Block found, get data ...
             while ($val = current($rawdata)) {
-                if (false === next($rawdata)) {
+                if (next($rawdata) === false) {
                     // No more data
                     break;
                 }
 
                 $val = trim($val);
 
-                if ('' === $val || $val === str_repeat($val[0], strlen($val))) {
+                if ($val === '' || $val === str_repeat($val[0], strlen($val))) {
                     continue;
                 }
 
                 $last = $val[strlen($val) - 1];
 
-                if ('' === $endtag || $partial_match || $last === $endtag) {
+                if ($endtag === '' || $partial_match || $last === $endtag) {
                     // Check if this line starts another block
                     $et = false;
 
                     foreach ($items as $field => $match) {
                         $pos = strpos($val, $match);
 
-                        if (false !== $pos && 0 === $pos) {
+                        if ($pos !== false && $pos === 0) {
                             $et = true;
 
                             break;
@@ -530,7 +530,7 @@ abstract class AbstractHandler implements HandlerInterface
 
                 if (false !== $pos) {
                     $var = strtok($field, '#');
-                    if ('[]' !== $var) {
+                    if ($var !== '[]') {
                         $r = static::assign($r, $var, $block);
                     }
                 }
@@ -993,7 +993,7 @@ abstract class AbstractHandler implements HandlerInterface
     {
         $key = array_shift($parts);
 
-        if (0 === count($parts)) {
+        if (count($parts) === 0) {
             if (!$key) {
                 $array[] = $value;
             } else {

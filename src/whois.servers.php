@@ -1,6 +1,9 @@
 <?php
 
-/**
+use phpWhois\Handlers\gTLD\{DotsterHandler, EnomHandler, GenericbHandler, GtldHandler, OnlinenicHandler, OpensrsHandler, PsiUsaHandler, TvcorpHandler};
+use phpWhois\Handlers\TLD\{ChHandler, RuHandler, ZanetHandler};
+
+/*
  * Whois servers list.
  *
  * This class supposed to be instantiated for using the phpWhois library
@@ -28,21 +31,20 @@
 
 return [
     'DATA' => [
-        'bz' => 'gtld',
-        'com' => 'gtld',
-        'jobs' => 'gtld',
-        'li' => 'ch',
-        'net' => 'gtld',
-        'su' => 'ru',
-        'tv' => 'gtld',
-        'za.org' => 'zanet',
-        'za.net' => 'zanet',
+        'bz' => GtldHandler::class,
+        'com' => GtldHandler::class,
+        'jobs' => GtldHandler::class,
+        'li' => ChHandler::class,
+        'net' => GtldHandler::class,
+        'su' => RuHandler::class,
+        'tv' => GtldHandler::class,
+        'za.org' => ZanetHandler::class,
+        'za.net' => ZanetHandler::class,
         // Punicode
-        'xn--p1ai' => 'ru',
+        'xn--p1ai' => RuHandler::class,
     ],
 
     // Non UTF-8 servers
-
     'NON_UTF8' => [
         'br.whois-servers.net' => 1,
         'ca.whois-servers.net' => 1,
@@ -132,7 +134,7 @@ return [
         'buzz' => 'whois.nic.buzz',
         'bw' => 'whois.nic.net.bw',
         'by' => 'whois.cctld.by',
-        // 'bz'                     => 'whois2.afilias-grs.net',
+        // 'bz' => 'whois2.afilias-grs.net',
         'bzh' => 'whois-bzh.nic.fr',
         'ca' => 'whois.cira.ca',
         'cab' => 'whois.donuts.co',
@@ -649,15 +651,15 @@ return [
     // handled gTLD whois servers
 
     'WHOIS_GTLD_HANDLER' => [
-        'whois.bulkregister.com' => 'enom',
-        'whois.dotregistrar.com' => 'dotster',
-        'whois.namesdirect.com' => 'dotster',
-        'whois.psi-usa.info' => 'psiusa',
-        'whois.www.tv' => 'tvcorp',
-        'whois.tucows.com' => 'opensrs',
-        'whois.35.com' => 'onlinenic',
-        'whois.nominalia.com' => 'genericb',
-        'whois.encirca.com' => 'genericb',
-        'whois.corenic.net' => 'genericb',
+        'whois.bulkregister.com' => EnomHandler::class,
+        'whois.dotregistrar.com' => DotsterHandler::class,
+        'whois.namesdirect.com' => DotsterHandler::class,
+        'whois.psi-usa.info' => PsiUsaHandler::class,
+        'whois.www.tv' => TvcorpHandler::class,
+        'whois.tucows.com' => OpensrsHandler::class,
+        'whois.35.com' => OnlinenicHandler::class,
+        'whois.nominalia.com' => GenericbHandler::class,
+        'whois.encirca.com' => GenericbHandler::class,
+        'whois.corenic.net' => GenericbHandler::class,
     ],
 ];

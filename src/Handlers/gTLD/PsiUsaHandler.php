@@ -26,7 +26,7 @@ namespace phpWhois\Handlers\gTLD;
 
 use phpWhois\Handlers\AbstractHandler;
 
-class PsiusaHandler extends AbstractHandler
+class PsiUsaHandler extends AbstractHandler
 {
     public $deepWhois = false;
 

@@ -10,6 +10,7 @@
 
 namespace phpWhois\Handlers\TLD;
 
+use phpWhois\Handlers\IP\{AfrinicHandler, ApnicHandler, ArinHandler, KrnicHandler, LacnicHandler, RipeHandler};
 use phpWhois\WhoisClient;
 
 class IpHandler extends WhoisClient
@@ -30,12 +31,12 @@ class IpHandler extends WhoisClient
         'African Network Information Center' => 'whois.afrinic.net',
     ];
     public $HANDLERS = [
-        'whois.krnic.net' => 'krnic',
-        'whois.apnic.net' => 'apnic',
-        'whois.ripe.net' => 'ripe',
-        'whois.arin.net' => 'arin',
-        'whois.lacnic.net' => 'lacnic',
-        'whois.afrinic.net' => 'afrinic',
+        'whois.krnic.net' => KrnicHandler::class,
+        'whois.apnic.net' => ApnicHandler::class,
+        'whois.ripe.net' => RipeHandler::class,
+        'whois.arin.net' => ArinHandler::class,
+        'whois.lacnic.net' => LacnicHandler::class,
+        'whois.afrinic.net' => AfrinicHandler::class,
     ];
     public $more_data = []; // More queries to get more accurated data
     public $done = [];
@@ -112,8 +113,7 @@ class IpHandler extends WhoisClient
             }
 
             if (!$found) {
-                $this->query['file'] = 'whois.ip.arin.php';
-                $this->query['handler'] = 'arin';
+                $this->query['handler'] = ArinHandler::class;
                 $result = $this->parse_results($result, $rwdata, $query, true);
             }
         }
@@ -130,12 +130,6 @@ class IpHandler extends WhoisClient
             if (!empty($rwdata)) {
                 if (!empty($srv_data['handler'])) {
                     $this->query['handler'] = $srv_data['handler'];
-
-                    if (!empty($srv_data['file'])) {
-                        $this->query['file'] = $srv_data['file'];
-                    } else {
-                        $this->query['file'] = 'whois.'.$this->query['handler'].'.php';
-                    }
                 }
 
                 $result = $this->parse_results($result, $rwdata, $query, $srv_data['reset']);
@@ -233,12 +227,10 @@ class IpHandler extends WhoisClient
 
         if (isset($this->HANDLERS[$host])) {
             $q['handler'] = $this->HANDLERS[$host];
-            $q['file'] = sprintf('whois.ip.%s.php', $q['handler']);
             $q['reset'] = true;
         } else {
             $q['handler'] = 'rwhois';
             $q['reset'] = false;
-            unset($q['file']);
         }
 
         $this->more_data[] = $q;

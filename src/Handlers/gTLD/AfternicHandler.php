@@ -22,9 +22,10 @@ class AfternicHandler extends AbstractHandler
             'tech' => 'Technical Contact',
             'zone' => 'Zone Contact',
             'domain.name' => 'Domain Name:',
-            'domain.changed' => 'Last updated on',
-            'domain.created' => 'Domain created on',
-            'domain.expires' => 'Domain expires on',
+            'domain.changed' => 'Updated Date:',
+            'domain.created' => 'Creation Date:',
+            'domain.expires' => 'Registry Expiry Date:',
+            'name_server' => 'Name Server:',
         ];
 
         return static::easyParser($data_str['rawdata'], $items, 'dmy', [], false, true);

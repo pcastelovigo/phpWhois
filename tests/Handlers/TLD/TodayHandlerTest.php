@@ -50,8 +50,6 @@ class TodayHandlerTest extends AbstractHandler
      */
     public function parseModxDotToday()
     {
-        static::markTestSkipped('modx.today todo');
-
         $query = 'modx.today';
 
         $fixture = $this->loadFixture($query);
@@ -62,13 +60,13 @@ class TodayHandlerTest extends AbstractHandler
 
         $actual = $this->handler->parse($data, $query);
 
-        //        $this->assertEquals('modx.today', $actual['regrinfo']['domain']['name']);
+        $this->assertEquals('modx.today', $actual['regrinfo']['domain']['name']);
         //        $this->assertEquals('2023-06-23', $actual['regrinfo']['domain']['changed']);
         //        $this->assertEquals('2014-05-09', $actual['regrinfo']['domain']['created']);
         //        $this->assertEquals('2024-05-09', $actual['regrinfo']['domain']['expires']);
-        //        $this->assertEquals('yes', $actual['regrinfo']['registered']);
-        //
-        //        $this->assertArrayHasKey('rawdata', $actual);
-        //        $this->assertEquals($fixture, $actual['rawdata'], 'Fixture data may be out of date');
+        $this->assertEquals('no', $actual['regrinfo']['registered']);
+
+        $this->assertArrayHasKey('rawdata', $actual);
+        $this->assertEquals($fixture, $actual['rawdata'], 'Fixture data may be out of date');
     }
 }
