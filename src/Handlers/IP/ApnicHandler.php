@@ -16,29 +16,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
- * @link http://phpwhois.pw
+ * @see http://phpwhois.pw
  * @copyright Copyright (C)1999,2005 easyDNS Technologies Inc. & Mark Jeftovic
  * @copyright Maintained by David Saez
  * @copyright Copyright (c) 2014 Dmitry Lukashin
  */
 
+namespace phpWhois\Handlers\IP;
+
 use phpWhois\Handlers\AbstractHandler;
 
-require_once 'whois.parser.php';
-
-if (!defined('__APNIC_HANDLER__')) {
-    define('__APNIC_HANDLER__', 1);
-}
-
-class apnic_handler
+class ApnicHandler extends AbstractHandler
 {
-
     public $deepWhois = false;
 
-    public function parse($data_str, $query)
+    public function parse($data_str, $query): array
     {
-        $translate = array(
+        $translate = [
             'fax-no' => 'fax',
             'e-mail' => 'email',
             'nic-hdl' => 'handle',
@@ -46,18 +40,18 @@ class apnic_handler
             'netname' => 'name',
             'descr' => 'desc',
             'aut-num' => 'handle',
-            'country' => 'country'
-        );
+            'country' => 'country',
+        ];
 
-        $contacts = array(
+        $contacts = [
             'admin-c' => 'admin',
-            'tech-c' => 'tech'
-        );
+            'tech-c' => 'tech',
+        ];
 
         $disclaimer = [];
-        $blocks = AbstractHandler::generic_parser_a_blocks($data_str, $translate, $disclaimer);
+        $blocks = static::generic_parser_a_blocks($data_str, $translate, $disclaimer);
 
-        $r = array();
+        $r = [];
 
         if (isset($disclaimer) && is_array($disclaimer)) {
             $r['disclaimer'] = $disclaimer;
@@ -90,7 +84,7 @@ class apnic_handler
             }
 
             $r['network'] = $rb;
-            format_dates($r, 'Ymd');
+            static::formatDates($r, 'Ymd');
 
             if (isset($r['network']['desc'])) {
                 if (is_array($r['network']['desc'])) {
@@ -114,9 +108,10 @@ class apnic_handler
             }
         }
 
-        $r = array('regrinfo' => $r);
+        $r = ['regrinfo' => $r];
         $r['regyinfo']['type'] = 'ip';
         $r['regyinfo']['registrar'] = 'Asia Pacific Network Information Centre';
+
         return $r;
     }
 }
