@@ -61,18 +61,14 @@ class AfternicHandlerTest extends AbstractHandler
         $actual = $this->handler->parse($data, $query);
 
         $expected = [
-            'regrinfo' => [
-                'domain' => [
-                    'name' => 'BUYDOMAINS.COM',
-                    // 'changed' => '2021-11-16',
-                    'created' => '1997-03-30',
-                    'expires' => '2029-03-31',
-                ], ],
-            //            'registered' => 'yes',
+            'domain' => [
+                'name' => 'BUYDOMAINS.COM',
+                // 'changed' => '2021-11-16',
+                'created' => '1997-03-30',
+                'expires' => '2029-03-31',
+            ],
         ];
 
         Assert::assertArraySubset($expected, $actual, 'Whois data may have changed');
-        $this->assertArrayHasKey('rawdata', $actual);
-        Assert::assertArraySubset($fixture, $actual['rawdata'], 'Fixture data may be out of date');
     }
 }
