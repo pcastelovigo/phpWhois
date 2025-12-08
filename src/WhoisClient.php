@@ -159,11 +159,11 @@ class WhoisClient
                 $query_args = str_replace(['{query}', '{version}'], [$query, 'phpWhois'.$this->codeVersion], $query_args);
 
                 $iptools = new IpTools();
-                if (false !== strpos($query_args, '{ip}')) {
+                if (strpos($query_args, '{ip}') !== false) {
                     $query_args = str_replace('{ip}', $iptools->getClientIp(), $query_args);
                 }
 
-                if (false !== strpos($query_args, '{hname}')) {
+                if (strpos($query_args, '{hname}') !== false) {
                     $query_args = str_replace('{hname}', gethostbyaddr($iptools->getClientIp()), $query_args);
                 }
             } else {
@@ -196,7 +196,7 @@ class WhoisClient
             // Connect to whois server, or return if failed
             $ptr = $this->connect();
 
-            if (false === $ptr) {
+            if ($ptr === false) {
                 $this->query['status'] = 'error';
                 $this->query['errstr'][] = 'Connect failed to: '.$this->query['server'];
 
@@ -302,7 +302,7 @@ class WhoisClient
         }
 
         // Fix/add nameserver information
-        if (method_exists($this, 'fixResult') && 'ip' !== $this->query['tld']) {
+        if (method_exists($this, 'fixResult') && $this->query['tld'] !== 'ip') {
             $this->fixResult($result, $query);
         }
 
@@ -366,13 +366,13 @@ class WhoisClient
             $val = trim($val);
 
             $pos = stripos($val, '<PRE>');
-            if (false !== $pos) {
+            if ($pos !== false) {
                 $pre = "\n";
                 $output .= substr($val, 0, $pos)."\n";
                 $val = substr($val, $pos + 5);
             }
             $pos = stripos($val, '</PRE>');
-            if (false !== $pos) {
+            if ($pos !== false) {
                 $pre = '';
                 $output .= substr($val, 0, $pos)."\n";
                 $val = substr($val, $pos + 6);
@@ -396,7 +396,7 @@ class WhoisClient
 
         foreach ($output as $val) {
             $val = trim($val);
-            if ('' == $val) {
+            if ($val == '') {
                 if (++$null > 2) {
                     continue;
                 }
@@ -454,7 +454,7 @@ class WhoisClient
             // Failed this attempt
             $this->query['status'] = 'error';
             $this->query['error'][] = "[{$errno}] {$errstr}";
-            ++$retry;
+            $retry++;
 
             // Sleep before retrying
             sleep($this->sleep);
@@ -474,20 +474,20 @@ class WhoisClient
      */
     public function process(&$result, $deep_whois = true)
     {
-        $handlerName = $this->loadHandler($this->query['handler']);
+        $handler = $this->loadHandler($this->query['handler']);
 
-        if ($handlerName === false) {
+        if ($handler === false) {
             $this->query['errstr'][] = "Can't find {$this->query['handler']} ";
 
             return $result;
         }
 
-        if (!$this->gtldRecurse && ($handlerName === GtldHandler::class)) {
+        if (!$this->gtldRecurse && ($handler === GtldHandler::class)) {
             return $result;
         }
 
         // Pass result to handler
-        $handler = new $handlerName('');
+        $handler = new $handler('');
 
         // If handler returned an error, append it to the query errors list
         if (isset($handler->query['errstr'])) {
@@ -525,8 +525,8 @@ class WhoisClient
                 $this->query['handler'] = $this->WHOIS_GTLD_HANDLER[$wserver];
             } else {
                 $parts = explode('.', $wserver);
-                $handler = '\phpWhois\Handlers\gTLD\\'.strtolower($parts[1]).'Handler';
-                if (class_exists($handler)) {
+                $handler = $this->loadHandler(strtolower($parts[1]));
+                if ($handler !== false) {
                     $this->query['handler'] = $handler;
                 }
             }
@@ -554,12 +554,12 @@ class WhoisClient
         foreach ($a2 as $key => $val) {
             if (isset($a1[$key])) {
                 if (is_array($val)) {
-                    if ('nserver' !== $key) {
+                    if ($key !== 'nserver') {
                         $a1[$key] = $this->mergeResults($a1[$key], $val);
                     }
                 } else {
                     $val = trim($val);
-                    if ('' !== $val) {
+                    if ($val !== '') {
                         $a1[$key] = $val;
                     }
                 }
@@ -582,19 +582,19 @@ class WhoisClient
         $dns = [];
 
         foreach ($nserver as $val) {
-            $val = str_replace(['[', ']', '(', ')', "\t"], ['', '', '', '', ' '], trim($val));
+            $val = str_replace(array('[', ']', '(', ')', "\t"), array('', '', '', '', ' '), trim($val));
             $parts = explode(' ', $val);
             $host = '';
             $ip = '';
 
             foreach ($parts as $p) {
-                if ('.' === substr($p, -1)) {
+                if (substr($p, -1) === '.') {
                     $p = substr($p, 0, -1);
                 }
 
-                if ((-1 == ip2long($p)) or (false === ip2long($p))) {
+                if ((ip2long($p) == -1) or (ip2long($p) === false)) {
                     // Hostname ?
-                    if ('' == $host && preg_match('/^[\w\-]+(\.[\w\-]+)+$/', $p)) {
+                    if ($host == '' && preg_match('/^[\w\-]+(\.[\w\-]+)+$/', $p)) {
                         $host = $p;
                     }
                 } else {
@@ -604,19 +604,19 @@ class WhoisClient
             }
 
             // Valid host name ?
-            if ('' == $host) {
+            if ($host == '') {
                 continue;
             }
 
             // Get ip address
-            if ('' == $ip) {
+            if ($ip == '') {
                 $ip = gethostbyname($host);
                 if ($ip == $host) {
                     $ip = '(DOES NOT EXIST)';
                 }
             }
 
-            if ('.' === substr($host, -1, 1)) {
+            if (substr($host, -1, 1) === '.') {
                 $host = substr($host, 0, -1);
             }
 

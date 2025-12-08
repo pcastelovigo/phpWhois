@@ -106,7 +106,7 @@ class Whois extends WhoisClient
         }
 
         // If domain to query was not set
-        if (!isset($query) || '' == $query) {
+        if (!isset($query) || $query == '') {
             // Configure to use default whois server
             $this->query['server'] = $this->nsiRegistry;
 
@@ -178,7 +178,7 @@ class Whois extends WhoisClient
         $np = count($dp) - 1;
         $tldtests = [];
 
-        for ($i = 0; $i < $np; ++$i) {
+        for ($i = 0; $i < $np; $i++) {
             array_shift($dp);
             $tldtests[] = implode('.', $dp);
         }

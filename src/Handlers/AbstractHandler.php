@@ -36,7 +36,7 @@ abstract class AbstractHandler implements HandlerInterface
         }
 
         foreach ($res as $key => $val) {
-            $key_to_ignore = (!is_numeric($key) && ('expires' === $key || 'created' === $key || 'changed' === $key));
+            $key_to_ignore = (!is_numeric($key) && ($key === 'expires' || $key === 'created' || $key === 'changed'));
 
             if (is_array($val)) {
                 if ($key_to_ignore) {
@@ -117,14 +117,14 @@ abstract class AbstractHandler implements HandlerInterface
         foreach ($rawdata as $val) {
             $val = trim($val);
 
-            if ('' !== $val && ('%' === $val[0] || '#' === $val[0])) {
+            if ($val !== '' && ($val[0] === '%' || $val[0] === '#')) {
                 if (!$dend) {
                     $disclaimer[] = trim(substr($val, 1));
                 }
 
                 continue;
             }
-            if ('' === $val) {
+            if ($val === '') {
                 $newblock = true;
 
                 continue;
@@ -139,7 +139,7 @@ abstract class AbstractHandler implements HandlerInterface
             $k = trim(strtok($val, ':'));
             $v = trim(substr(strstr($val, ':'), 1));
 
-            if ('' === $v) {
+            if ($v === '') {
                 continue;
             }
 
@@ -147,11 +147,11 @@ abstract class AbstractHandler implements HandlerInterface
 
             if (isset($translate[$k])) {
                 $k = $translate[$k];
-                if ('' === $k) {
+                if ($k === '') {
                     continue;
                 }
-                if (false !== strpos($k, '.')) {
-                    $block = static::assign($block, $k, $v);
+                if (strpos($k, '.') !== false) {
+                    $block = assign($block, $k, $v);
 
                     continue;
                 }
@@ -159,7 +159,7 @@ abstract class AbstractHandler implements HandlerInterface
                 $k = strtolower($k);
             }
 
-            if ('handle' === $k) {
+            if ($k === 'handle') {
                 $v = strtok($v, ' ');
                 $gkey = strtoupper($v);
             }
@@ -380,8 +380,8 @@ abstract class AbstractHandler implements HandlerInterface
         $disok = true;
 
         foreach ($rawdata as $val) {
-            if ('' !== trim($val)) {
-                if (('%' === $val[0] || '#' === $val[0]) && $disok) {
+            if (trim($val) !== '') {
+                if (($val[0] === '%' || $val[0] === '#') && $disok) {
                     $r['disclaimer'][] = trim(substr($val, 1));
                     $disok = true;
 
@@ -394,12 +394,12 @@ abstract class AbstractHandler implements HandlerInterface
                 foreach ($items as $match => $field) {
                     $pos = strpos($val, $match);
 
-                    if (false !== $pos) {
-                        if ('' !== $field) {
+                    if ($pos !== false) {
+                        if ($field !== '') {
                             $itm = trim(substr($val, $pos + strlen($match)));
 
-                            if ('' !== $itm) {
-                                $r = static::assign($r, $field, str_replace('"', '\"', $itm));
+                            if ($itm !== '') {
+                                $r = assign($r, $field, str_replace('"', '\"', $itm));
                             }
                         }
 
@@ -528,7 +528,7 @@ abstract class AbstractHandler implements HandlerInterface
             foreach ($items as $field => $match) {
                 $pos = strpos($line, $match);
 
-                if (false !== $pos) {
+                if ($pos !== false) {
                     $var = strtok($field, '#');
                     if ($var !== '[]') {
                         $r = static::assign($r, $var, $block);
@@ -631,19 +631,19 @@ abstract class AbstractHandler implements HandlerInterface
                 foreach ($items as $match => $field) {
                     $pos = stripos($val, $match);
 
-                    if (false === $pos) {
+                    if ($pos === false) {
                         continue;
                     }
 
                     $itm = trim(substr($val, $pos + strlen($match)));
 
-                    if ('' !== $field && '' !== $itm) {
-                        $r = static::assign($r, $field, $itm);
+                    if ($field !== '' && $itm !== '') {
+                        $r = assign($r, $field, $itm);
                     }
 
                     $val = trim(substr($val, 0, $pos));
 
-                    if ('' === $val) {
+                    if ($val === '') {
                         unset($array[$key]);
 
                         break;
@@ -668,7 +668,7 @@ abstract class AbstractHandler implements HandlerInterface
 
                         $val = str_replace($matches[0], '', $val);
 
-                        if ('' === $val) {
+                        if ($val === '') {
                             unset($array[$key]);
 
                             continue;
@@ -685,7 +685,7 @@ abstract class AbstractHandler implements HandlerInterface
                     $val = str_replace($matches[0], '', $val);
                     $val = trim(str_replace('()', '', $val));
 
-                    if ('' === $val) {
+                    if ($val === '') {
                         unset($array[$key]);
 
                         continue;
@@ -759,7 +759,7 @@ abstract class AbstractHandler implements HandlerInterface
 
         $parts = explode(' ', $date);
 
-        if (false !== strpos($parts[0], '@')) {
+        if (strpos($parts[0], '@') !== false) {
             unset($parts[0]);
             $date = implode(' ', $parts);
         }
@@ -769,10 +769,10 @@ abstract class AbstractHandler implements HandlerInterface
         $parts = explode(' ', $date);
         $res = [];
 
-        if ((8 === strlen($parts[0]) || 1 === count($parts)) && is_numeric($parts[0])) {
+        if ((strlen($parts[0]) === 8 || count($parts) === 1) && is_numeric($parts[0])) {
             $val = $parts[0];
-            for ($p = $i = 0; $i < 3; ++$i) {
-                if ('Y' !== $format[$i]) {
+            for ($p = $i = 0; $i < 3; $i++) {
+                if ($format[$i] !== 'Y') {
                     $res[$format[$i]] = substr($val, $p, 2);
                     $p += 2;
                 } else {
@@ -783,15 +783,15 @@ abstract class AbstractHandler implements HandlerInterface
         } else {
             $format = strtolower($format);
 
-            for ($p = $i = 0; $p < count($parts) && $i < strlen($format); ++$p) {
-                if ('' === trim($parts[$p])) {
+            for ($p = $i = 0; $p < count($parts) && $i < strlen($format); $p++) {
+                if (trim($parts[$p]) === '') {
                     continue;
                 }
 
-                if ('-' !== $format[$i]) {
+                if ($format[$i] !== '-') {
                     $res[$format[$i]] = $parts[$p];
                 }
-                ++$i;
+                $i++;
             }
         }
 
@@ -805,7 +805,7 @@ abstract class AbstractHandler implements HandlerInterface
             $ok = true;
 
             foreach ($res as $key => $val) {
-                if ('' === $val || '' === $key) {
+                if ($val === '' || $key === '') {
                     continue;
                 }
 
@@ -817,7 +817,7 @@ abstract class AbstractHandler implements HandlerInterface
                     break;
                 }
 
-                if ('y' !== $key && 'Y' !== $key && $val > 1900) {
+                if ($key !== 'y' && $key !== 'Y' && $val > 1900) {
                     $res[$key] = $res['y'];
                     $res['y'] = $val;
                     $ok = false;

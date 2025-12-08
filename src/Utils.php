@@ -177,7 +177,7 @@ class Utils extends Whois
         // PHP >= 8.0 + ext-iconv
         if (function_exists('iconv')) {
             $converted = @iconv('ISO-8859-1', 'UTF-8', $str);
-            if (false !== $converted) {
+            if ($converted !== false) {
                 return $converted;
             }
         }

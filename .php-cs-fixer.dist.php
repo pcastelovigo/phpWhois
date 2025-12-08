@@ -14,6 +14,7 @@ return (new Config())
         '@PhpCsFixer' => true,
 
         'yoda_style' => false,
+        'increment_style' => false,
         'simplified_null_return' => false,
         'control_structure_braces' => false,
         'new_with_parentheses' => [

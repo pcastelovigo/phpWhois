@@ -67,7 +67,7 @@ class IpTools
             $flags = FILTER_FLAG_IPV4|FILTER_FLAG_NO_PRIV_RANGE|FILTER_FLAG_NO_RES_RANGE;
         }
 
-        return false !== filter_var($ip, FILTER_VALIDATE_IP, ['flags' => $flags]);
+        return filter_var($ip, FILTER_VALIDATE_IP, ['flags' => $flags]) !== false;
     }
 
     /**
@@ -83,7 +83,7 @@ class IpTools
             $flags = FILTER_FLAG_IPV6|FILTER_FLAG_NO_PRIV_RANGE;
         }
 
-        return false !== filter_var($ip, FILTER_VALIDATE_IP, ['flags' => $flags]);
+        return filter_var($ip, FILTER_VALIDATE_IP, ['flags' => $flags]) !== false;
     }
 
     /**
@@ -134,7 +134,7 @@ class IpTools
         $n = 3 - substr_count($net, '.');
 
         if ($n > 0) {
-            for ($i = $n; $i > 0; --$i) {
+            for ($i = $n; $i > 0; $i--) {
                 $start .= '.0';
             }
         }
@@ -144,14 +144,14 @@ class IpTools
         $bits2 = str_pad(decbin($net), 32, '0', 'STR_PAD_LEFT');
         $final = '';
 
-        for ($i = 0; $i < 32; ++$i) {
+        for ($i = 0; $i < 32; $i++) {
             if ($bits1[$i] == $bits2[$i]) {
                 $final .= $bits1[$i];
             }
-            if (1 == $bits1[$i] and 0 == $bits2[$i]) {
+            if ($bits1[$i] == 1 and $bits2[$i] == 0) {
                 $final .= $bits1[$i];
             }
-            if (0 == $bits1[$i] and 1 == $bits2[$i]) {
+            if ($bits1[$i] == 0 and $bits2[$i] == 1) {
                 $final .= $bits2[$i];
             }
         }
