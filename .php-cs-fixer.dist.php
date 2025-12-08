@@ -13,6 +13,7 @@ return (new Config())
         '@auto' => true,
         '@PhpCsFixer' => true,
 
+        'yoda_style' => false,
         'simplified_null_return' => false,
         'control_structure_braces' => false,
         'new_with_parentheses' => [
