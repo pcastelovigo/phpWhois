@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Handlers\IP;
 
 use PHPUnit\Framework\TestCase;
 use phpWhois\IpTools;
@@ -39,7 +39,7 @@ class IpToolsTest extends TestCase
         $this->assertFalse($ipTools->validIp($ip));
     }
 
-    public function invalidIpsProvider()
+    public function invalidIpsProvider(): array
     {
         return [
             [''],
