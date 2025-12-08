@@ -16,12 +16,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
- * @link http://phpwhois.pw
+ * @see http://phpwhois.pw
  * @copyright Copyright (C)1999,2005 easyDNS Technologies Inc. & Mark Jeftovic
  * @copyright Maintained by David Saez
  * @copyright Copyright (c) 2014 Dmitry Lukashin
  */
+
+use phpWhois\Handlers\AbstractHandler;
 
 require_once 'whois.parser.php';
 
@@ -31,12 +32,11 @@ if (!defined('__LACNIC_HANDLER__')) {
 
 class lacnic_handler
 {
-
     public $deepWhois = false;
 
-    public function parse($data_str, $query)
+    public function parse($data_str, $query): array
     {
-        $translate = array(
+        $translate = [
             'fax-no' => 'fax',
             'e-mail' => 'email',
             'nic-hdl-br' => 'handle',
@@ -44,39 +44,37 @@ class lacnic_handler
             'person' => 'name',
             'netname' => 'name',
             'descr' => 'desc',
-            'country' => 'address.country'
-        );
+            'country' => 'address.country',
+        ];
 
-        $contacts = array(
+        $contacts = [
             'owner-c' => 'owner',
             'tech-c' => 'tech',
             'abuse-c' => 'abuse',
-            'admin-c' => 'admin'
-        );
+            'admin-c' => 'admin',
+        ];
 
-        $r = generic_parser_a($data_str, $translate, $contacts, 'network');
+        $r = AbstractHandler::generic_parser_a($data_str, $translate, $contacts, 'network');
 
-        unset($r['network']['owner']);
-        unset($r['network']['ownerid']);
-        unset($r['network']['responsible']);
-        unset($r['network']['address']);
-        unset($r['network']['phone']);
-        unset($r['network']['aut-num']);
-        unset($r['network']['nsstat']);
-        unset($r['network']['nslastaa']);
-        unset($r['network']['inetrev']);
+        unset($r['network']['owner'], $r['network']['ownerid'], $r['network']['responsible'], $r['network']['address'], $r['network']['phone'], $r['network']['nsstat'], $r['network']['nslastaa'], $r['network']['inetrev']);
 
         if (!empty($r['network']['aut-num'])) {
             $r['network']['handle'] = $r['network']['aut-num'];
         }
 
         if (isset($r['network']['nserver'])) {
+            if (is_string($r['network']['nserver'])) {
+                $r['network']['nserver'] = [$r['network']['nserver']];
+            }
             $r['network']['nserver'] = array_unique($r['network']['nserver']);
         }
 
-        $r = array('regrinfo' => $r);
-        $r['regyinfo']['type'] = 'ip';
-        $r['regyinfo']['registrar'] = 'Latin American and Caribbean IP address Regional Registry';
-        return $r;
+        return [
+            'regrinfo' => $r,
+            'regyinfo' => [
+                'type' => 'ip',
+                'registrar' => 'Latin American and Caribbean IP address Regional Registry',
+            ],
+        ];
     }
 }
